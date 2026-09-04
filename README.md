@@ -58,7 +58,7 @@ Verification commands:
 BGP is used for Internet / ILL connectivity.
 
     ISP AS      : 65100
-    Internet AS : 65110
+    Internet AS : 65000
 
 Verification commands:
 
