@@ -1,0 +1,142 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.09.04 16:43:07 =~=~=~=~=~=~=~=~=~=~=~=
+show running-config
+Building configuration...
+
+Current configuration : 1795 bytes
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname INTERNET
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+ --More--         ip cef
+no ipv6 cef
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+! 
+!
+!
+!
+!
+ --More--         !
+!
+!
+!
+interface FastEthernet0/0
+ ip address 8.8.8.1 255.255.255.0
+ duplex full
+!
+interface Serial1/0
+ ip address 10.0.0.2 255.255.255.252
+ serial restart-delay 0
+!
+interface Serial1/1
+ ip address 10.0.0.6 255.255.255.252
+ serial restart-delay 0
+!
+interface Serial1/2
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+interface Serial1/3
+ no ip address
+ --More--          shutdown
+ serial restart-delay 0
+!
+interface Ethernet2/0
+ ip address 9.9.9.1 255.255.255.0
+ duplex full
+!
+interface Ethernet2/1
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet2/2
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet2/3
+ no ip address
+ shutdown
+ duplex full
+!
+router bgp 65000
+ --More--          bgp log-neighbor-changes
+ neighbor 10.0.0.1 remote-as 65100
+ neighbor 10.0.0.5 remote-as 65100
+ !
+ address-family ipv4
+  redistribute connected
+  neighbor 10.0.0.1 activate
+  neighbor 10.0.0.1 soft-reconfiguration inbound
+  neighbor 10.0.0.5 activate
+  neighbor 10.0.0.5 soft-reconfiguration inbound
+ exit-address-family
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list customer-ILLCE1 seq 4 permit 172.16.0.0/24
+!
+route-map prefer-pe2 permit 10
+ match ip address prefix-list customer-ILLCE1
+ --More--          set local-preference 200
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+
+INTERNET#  

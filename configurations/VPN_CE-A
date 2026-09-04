@@ -1,0 +1,123 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.09.04 16:53:10 =~=~=~=~=~=~=~=~=~=~=~=
+
+CE1#
+CE1#shpw    p ow running-config
+Building configuration...
+
+Current configuration : 1219 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname CE1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+ip cef
+!
+!
+!
+!
+no ip domain lookup
+ip auth-proxy max-nodata-conns 3
+ --More--         ip admission max-nodata-conns 3
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+! 
+!
+ --More--         !
+!
+!
+interface Ethernet0/0
+ ip address 192.168.10.1 255.255.255.0
+ full-duplex
+!
+interface Serial0/0
+ ip address 100.0.0.2 255.255.255.252
+!
+interface Serial0/1
+ no ip address
+ shutdown
+!
+interface Ethernet1/0
+ no ip address
+ shutdown
+ half-duplex
+!
+interface Ethernet1/1
+ no ip address
+ shutdown
+ half-duplex
+ --More--         !
+interface Ethernet1/2
+ no ip address
+ shutdown
+ half-duplex
+!
+interface Ethernet1/3
+ no ip address
+ shutdown
+ half-duplex
+!
+ip forward-protocol nd
+ip route 0.0.0.0 0.0.0.0 100.0.0.1
+ip route 192.168.20.0 255.255.255.0 100.0.0.1
+!
+!
+no ip http server
+no ip http secure-server
+!
+no cdp log mismatch duplex
+!
+!
+!
+ --More--         control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+!
+ --More--         end
+
+CE1#      

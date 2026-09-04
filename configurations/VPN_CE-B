@@ -1,0 +1,122 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.09.04 16:54:07 =~=~=~=~=~=~=~=~=~=~=~=
+
+CE2#
+CE2#show run
+Building configuration...
+
+Current configuration : 1184 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname CE2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+ip cef
+!
+!
+!
+!
+no ip domain lookup
+ip auth-proxy max-nodata-conns 3
+ --More--         ip admission max-nodata-conns 3
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+! 
+!
+ --More--         !
+!
+!
+interface Ethernet0/0
+ ip address 192.168.20.1 255.255.255.0
+ half-duplex
+!
+interface Serial0/0
+ no ip address
+ shutdown
+!
+interface Serial0/1
+ ip address 100.0.0.6 255.255.255.252
+!
+interface Ethernet1/0
+ no ip address
+ shutdown
+ half-duplex
+!
+interface Ethernet1/1
+ no ip address
+ shutdown
+ half-duplex
+ --More--         !
+interface Ethernet1/2
+ no ip address
+ shutdown
+ half-duplex
+!
+interface Ethernet1/3
+ no ip address
+ shutdown
+ half-duplex
+!
+ip forward-protocol nd
+ip route 192.168.10.0 255.255.255.0 100.0.0.5
+!
+!
+no ip http server
+no ip http secure-server
+!
+no cdp log mismatch duplex
+!
+!
+!
+control-plane
+ --More--         !
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+!
+end
+ --More--         
+CE2#           

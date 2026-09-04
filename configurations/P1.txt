@@ -1,0 +1,128 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.09.04 16:40:38 =~=~=~=~=~=~=~=~=~=~=~=
+
+P1#
+P1#show running-config
+Building configuration...
+
+Current configuration : 1617 bytes
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname P1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$wrEV$IMh3UyrrTvgxQV2mZIs1V0
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+ --More--         !
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+username cisco password 7 095F5B1B10
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+! 
+!
+ --More--         !
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+!
+interface FastEthernet0/0
+ no ip address
+ shutdown
+ duplex full
+!
+interface Serial1/0
+ ip address 10.0.0.1 255.255.255.252
+ serial restart-delay 0
+!
+interface Serial1/1
+ ip address 10.0.0.9 255.255.255.252
+ mpls ip
+ serial restart-delay 0
+ --More--         !
+interface Serial1/2
+ ip address 10.0.0.21 255.255.255.252
+ mpls ip
+ serial restart-delay 0
+!
+interface Serial1/3
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+router ospf 1
+ network 1.1.1.1 0.0.0.0 area 0
+ network 10.0.0.0 0.0.0.3 area 0
+ network 10.0.0.8 0.0.0.3 area 0
+ network 10.0.0.20 0.0.0.3 area 0
+!
+router bgp 65100
+ bgp log-neighbor-changes
+ neighbor 3.3.3.3 remote-as 65100
+ neighbor 3.3.3.3 update-source Loopback0
+ neighbor 3.3.3.3 soft-reconfiguration inbound
+ neighbor 10.0.0.2 remote-as 65000
+ --More--          neighbor 10.0.0.2 soft-reconfiguration inbound
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ --More--          stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+
+P1#  

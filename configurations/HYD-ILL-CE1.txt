@@ -1,0 +1,110 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.09.04 16:44:08 =~=~=~=~=~=~=~=~=~=~=~=
+sh running-config
+Building configuration...
+
+Current configuration : 1160 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname HYD-ILL-CE1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+ip cef
+!
+!
+!
+!
+no ip domain lookup
+ip auth-proxy max-nodata-conns 3
+ --More--         ip admission max-nodata-conns 3
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+! 
+!
+ --More--         !
+!
+!
+interface Ethernet0/0
+ ip address 172.16.0.1 255.255.255.0
+ full-duplex
+!
+interface Serial0/0
+ ip address 200.0.0.2 255.255.255.252
+!
+interface Serial0/1
+ no ip address
+ shutdown
+!
+router bgp 65110
+ no synchronization
+ bgp log-neighbor-changes
+ network 0.0.0.0
+ redistribute connected
+ redistribute static
+ neighbor 200.0.0.1 remote-as 65100
+ neighbor 200.0.0.1 soft-reconfiguration inbound
+ no auto-summary
+ --More--         !
+ip forward-protocol nd
+ip route 0.0.0.0 0.0.0.0 200.0.0.1
+!
+!
+no ip http server
+no ip http secure-server
+!
+no cdp log mismatch duplex
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ --More--         line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+!
+end
+
+HYD-ILL-CE1#  

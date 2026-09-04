@@ -1,0 +1,133 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.09.04 16:42:04 =~=~=~=~=~=~=~=~=~=~=~=
+
+P2#
+P2#show eu  running confo igconfig -config
+Building configuration...
+
+Current configuration : 1723 bytes
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname P2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$R12s$x7tDf/88bMZt47Z.x5mSL1
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+ --More--         !
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+username cisco password 7 001706140D
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+! 
+!
+ --More--         !
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface FastEthernet0/0
+ no ip address
+ shutdown
+ duplex full
+!
+interface Serial1/0
+ ip address 10.0.0.13 255.255.255.252
+ mpls ip
+ serial restart-delay 0
+!
+interface Serial1/1
+ ip address 10.0.0.5 255.255.255.252
+ serial restart-delay 0
+ --More--         !
+interface Serial1/2
+ ip address 10.0.0.22 255.255.255.252
+ mpls ip
+ serial restart-delay 0
+!
+interface Serial1/3
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+router ospf 2
+ network 2.2.2.2 0.0.0.0 area 0
+ network 10.0.0.4 0.0.0.3 area 0
+ network 10.0.0.12 0.0.0.3 area 0
+ network 10.0.0.20 0.0.0.3 area 0
+!
+router bgp 65100
+ bgp log-neighbor-changes
+ neighbor 4.4.4.4 remote-as 65100
+ neighbor 4.4.4.4 update-source Loopback0
+ neighbor 10.0.0.6 remote-as 65000
+ !
+ --More--          address-family ipv4
+  neighbor 4.4.4.4 activate
+  neighbor 4.4.4.4 soft-reconfiguration inbound
+  neighbor 10.0.0.6 activate
+  neighbor 10.0.0.6 soft-reconfiguration inbound
+ exit-address-family
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ --More--          stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+
+P2#                 
