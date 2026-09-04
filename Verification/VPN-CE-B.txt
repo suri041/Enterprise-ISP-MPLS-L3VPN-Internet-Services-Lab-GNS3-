@@ -1,0 +1,54 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.09.04 15:59:35 =~=~=~=~=~=~=~=~=~=~=~=
+show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                192.168.20.1    YES NVRAM  up                    up      
+Serial0/0                  unassigned      YES NVRAM  administratively down down    
+Serial0/1                  100.0.0.6       YES NVRAM  up                    up      
+Ethernet1/0                unassigned      YES NVRAM  administratively down down    
+Ethernet1/1                unassigned      YES NVRAM  administratively down down    
+Ethernet1/2                unassigned      YES NVRAM  administratively down down    
+Ethernet1/3                unassigned      YES NVRAM  administratively down down    
+CE2#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     100.0.0.0/30 is subnetted, 1 subnets
+C       100.0.0.4 is directly connected, Serial0/1
+S    192.168.10.0/24 [1/0] via 100.0.0.5
+C    192.168.20.0/24 is directly connected, Ethernet0/0
+CE2#show ip route static
+S    192.168.10.0/24 [1/0] via 100.0.0.5
+CE2#show ip route bgp
+
+CE2#show ip bgp summary
+% BGP not active
+
+CE2#show ip bgp
+% BGP not active
+
+CE2#ping 192.168.20.1 source 192.168.10.1
+
+% Invalid source address- IP address not on any of our up interfaces
+CE2#ping 192.168.20.1 source 192.168.10.10.1 20.10.1 source 192.168.20.1 10.1 source 192.168.20.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.10.1, timeout is 2 seconds:
+Packet sent with a source address of 192.168.20.1 
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 60/100/144 ms
+CE2#ping 192.168.10.1 source 192.168.20.1 -c repeat 100repeat 100 
+
+Type escape sequence to abort.
+Sending 100, 100-byte ICMP Echos to 192.168.10.1, timeout is 2 seconds:
+Packet sent with a source address of 192.168.20.1 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Success rate is 100 percent (100/100), round-trip min/avg/max = 36/85/144 ms
+CE2#

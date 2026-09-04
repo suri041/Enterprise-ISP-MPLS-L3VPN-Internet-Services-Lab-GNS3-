@@ -1,0 +1,259 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.09.04 15:26:06 =~=~=~=~=~=~=~=~=~=~=~=
+
+P2#
+P2#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+FastEthernet0/0        unassigned      YES NVRAM  administratively down down    
+Serial1/0              10.0.0.13       YES NVRAM  up                    up      
+Serial1/1              10.0.0.5        YES NVRAM  up                    up      
+Serial1/2              10.0.0.22       YES NVRAM  up                    up      
+Serial1/3              unassigned      YES NVRAM  administratively down down    
+Loopback0              2.2.2.2         YES NVRAM  up                    up      
+P2#show ip ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           0   FULL/  -        00:00:39    10.0.0.21       Serial1/2
+4.4.4.4           0   FULL/  -        00:00:29    10.0.0.14       Serial1/0
+P2#show ip route ospf
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is 3.3.3.3 to network 0.0.0.0
+
+      1.0.0.0/32 is subnetted, 1 subnets
+O        1.1.1.1 [110/65] via 10.0.0.21, 00:33:00, Serial1/2
+      3.0.0.0/32 is subnetted, 1 subnets
+O        3.3.3.3 [110/129] via 10.0.0.21, 00:31:07, Serial1/2
+                 [110/129] via 10.0.0.14, 00:30:46, Serial1/0
+      4.0.0.0/32 is subnetted, 1 subnets
+O        4.4.4.4 [110/65] via 10.0.0.14, 00:30:46, Serial1/0
+      10.0.0.0/8 is variably subnetted, 9 subnets, 2 masks
+O        10.0.0.8/30 [110/128] via 10.0.0.21, 00:31:07, Serial1/2
+O        10.0.0.16/30 [110/128] via 10.0.0.14, 00:30:46, Serial1/0
+P2#show mpls interfaces
+Interface              IP            Tunnel   BGP Static Operational
+Serial1/0              Yes (ldp)     No       No  No     Yes        
+Serial1/2              Yes (ldp)     No       No  No     Yes        
+P2#show mpls ldp neighbor
+    Peer LDP Ident: 1.1.1.1:0; Local LDP Ident 2.2.2.2:0
+	TCP connection: 1.1.1.1.646 - 2.2.2.2.26439
+	State: Oper; Msgs sent/rcvd: 55/60; Downstream
+	Up time: 00:32:54
+	LDP discovery sources:
+	  Serial1/2, Src IP addr: 10.0.0.21
+        Addresses bound to peer LDP Ident:
+          10.0.0.1        1.1.1.1         10.0.0.21       10.0.0.9        
+    Peer LDP Ident: 4.4.4.4:0; Local LDP Ident 2.2.2.2:0
+	TCP connection: 4.4.4.4.47032 - 2.2.2.2.646
+	State: Oper; Msgs sent/rcvd: 47/51; Downstream
+	Up time: 00:30:45
+	LDP discovery sources:
+	  Serial1/0, Src IP addr: 10.0.0.14
+        Addresses bound to peer LDP Ident:
+          10.0.0.14       4.4.4.4         10.0.0.18       115.12.1.1      
+P2#show mpls forwarding-table
+Local      Outgoing   Prefix           Bytes Label   Outgoing   Next Hop    
+Label      Label      or Tunnel Id     Switched      interface              
+16         Pop Label  1.1.1.1/32       60            Se1/2      point2point 
+17         Pop Label  10.0.0.8/30      0             Se1/2      point2point 
+19         16         3.3.3.3/32       0             Se1/0      point2point 
+           19         3.3.3.3/32       0             Se1/2      point2point 
+20         Pop Label  10.0.0.16/30     0             Se1/0      point2point 
+21         Pop Label  4.4.4.4/32       584           Se1/0      point2point 
+P2#h   sh run
+Building configuration...
+
+Current configuration : 1723 bytes
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname P2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$R12s$x7tDf/88bMZt47Z.x5mSL1
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+ --More--         !
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+username cisco password 7 001706140D
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+! 
+!
+ --More--         !
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface FastEthernet0/0
+ no ip address
+ shutdown
+ duplex full
+!
+interface Serial1/0
+ ip address 10.0.0.13 255.255.255.252
+ mpls ip
+ serial restart-delay 0
+!
+interface Serial1/1
+ ip address 10.0.0.5 255.255.255.252
+ serial restart-delay 0
+ --More--         !
+interface Serial1/2
+ ip address 10.0.0.22 255.255.255.252
+ mpls ip
+ serial restart-delay 0
+!
+interface Serial1/3
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+router ospf 2
+ network 2.2.2.2 0.0.0.0 area 0
+ network 10.0.0.4 0.0.0.3 area 0
+ network 10.0.0.12 0.0.0.3 area 0
+ network 10.0.0.20 0.0.0.3 area 0
+!
+router bgp 65100
+ bgp log-neighbor-changes
+ neighbor 4.4.4.4 remote-as 65100
+ neighbor 4.4.4.4 update-source Loopback0
+ neighbor 10.0.0.6 remote-as 65000
+ !
+ --More--          address-family ipv4
+  neighbor 4.4.4.4 activate
+  neighbor 4.4.4.4 soft-reconfiguration inbound
+  neighbor 10.0.0.6 activate
+  neighbor 10.0.0.6 soft-reconfiguration inbound
+ exit-address-family
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ --More--          stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+
+P2#sh ip bgp summary
+BGP router identifier 2.2.2.2, local AS number 65100
+BGP table version is 10, main routing table version 10
+9 network entries using 1296 bytes of memory
+9 path entries using 720 bytes of memory
+4/4 BGP path/bestpath attribute entries using 544 bytes of memory
+1 BGP rrinfo entries using 24 bytes of memory
+3 BGP AS-PATH entries using 72 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 2656 total bytes of memory
+BGP activity 9/0 prefixes, 9/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+4.4.4.4         4        65100      39      40       10    0    0 00:31:48        5
+10.0.0.6        4        65000      51      42       10    0    0 00:34:06        4
+P2#sh ip bgp
+BGP table version is 10, local router ID is 2.2.2.2
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *>i 0.0.0.0          3.3.3.3                  0    100      0 65110 i
+ *>  8.8.8.0/24       10.0.0.6                 0             0 65000 ?
+ *>  9.9.9.0/24       10.0.0.6                 0             0 65000 ?
+ *>  10.0.0.0/30      10.0.0.6                 0             0 65000 ?
+ r>  10.0.0.4/30      10.0.0.6                 0             0 65000 ?
+ *>i 115.12.1.0/30    4.4.4.4                  0    100      0 65120 ?
+ *>i 172.16.0.0/24    3.3.3.3                  0    100      0 65110 ?
+ *>i 172.17.1.0/24    4.4.4.4                  0    100      0 65120 ?
+ *>i 200.0.0.0/30     3.3.3.3                  0    100      0 65110 ?
+P2#sh ip roure  te bgp
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is 3.3.3.3 to network 0.0.0.0
+
+B*    0.0.0.0/0 [200/0] via 3.3.3.3, 00:30:57
+      8.0.0.0/24 is subnetted, 1 subnets
+B        8.8.8.0 [20/0] via 10.0.0.6, 00:33:08
+      9.0.0.0/24 is subnetted, 1 subnets
+B        9.9.9.0 [20/0] via 10.0.0.6, 00:33:08
+      10.0.0.0/8 is variably subnetted, 9 subnets, 2 masks
+B        10.0.0.0/30 [20/0] via 10.0.0.6, 00:33:08
+      115.0.0.0/30 is subnetted, 1 subnets
+B        115.12.1.0 [200/0] via 4.4.4.4, 00:28:58
+      172.16.0.0/24 is subnetted, 1 subnets
+B        172.16.0.0 [200/0] via 3.3.3.3, 00:30:57
+ --More--               172.17.0.0/24 is subnetted, 1 subnets
+B        172.17.1.0 [200/0] via 4.4.4.4, 00:28:58
+      200.0.0.0/30 is subnetted, 1 subnets
+B        200.0.0.0 [200/0] via 3.3.3.3, 00:30:57
+P2#

@@ -1,0 +1,788 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.09.04 14:48:31 =~=~=~=~=~=~=~=~=~=~=~=
+show version
+Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)S6, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Fri 08-Aug-14 04:05 by prod_rel_team
+
+ROM: ROMMON Emulation Microcode
+BOOTLDR: 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)S6, RELEASE SOFTWARE (fc1)
+
+INTERNET uptime is 18 minutes
+System returned to ROM by unknown reload cause - suspect boot_data[BOOT_COUNT] 0x0, BOOT_COUNT 0, BOOTDATA 19
+System image file is "tftp://255.255.255.255/unknown"
+Last reload reason: Unknown reason
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+ --More--         
+INTERNET#how running-config
+          ^
+% Invalid input detected at '^' marker.
+
+INTERNET#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+FastEthernet0/0        8.8.8.1         YES NVRAM  up                    up      
+Serial1/0              10.0.0.2        YES NVRAM  up                    up      
+Serial1/1              10.0.0.6        YES NVRAM  up                    up      
+Serial1/2              unassigned      YES NVRAM  administratively down down    
+Serial1/3              unassigned      YES NVRAM  administratively down down    
+Ethernet2/0            9.9.9.1         YES NVRAM  up                    up      
+Ethernet2/1            unassigned      YES NVRAM  administratively down down    
+Ethernet2/2            unassigned      YES NVRAM  administratively down down    
+Ethernet2/3            unassigned      YES NVRAM  administratively down down    
+INTERNET#show interfaces description
+Interface                      Status         Protocol Description
+Fa0/0                          up             up       
+Se1/0                          up             up       
+Se1/1                          up             up       
+Se1/2                          admin down     down     
+Se1/3                          admin down     down     
+Et2/0                          up             up       
+Et2/1                          admin down     down     
+Et2/2                          admin down     down     
+Et2/3                          admin down     down     
+INTERNET#show interfaces
+FastEthernet0/0 is up, line protocol is up 
+  Hardware is DEC21140, address is ca01.0914.0000 (bia ca01.0914.0000)
+  Internet address is 8.8.8.1/24
+  MTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec, 
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full-duplex, 100Mb/s, 100BaseTX/FX
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output 00:00:04, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles 
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog
+     0 input packets with dribble condition detected
+     138 packets output, 15490 bytes, 0 underruns
+ --More--         
+INTERNET#how ip protocols
+          ^
+% Invalid input detected at '^' marker.
+
+INTERNET#show ip routehow ip protocolsshow ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is "bgp 65000"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  IGP synchronization is disabled
+  Automatic route summarization is disabled
+  Redistributing: connected
+  Neighbor(s):
+    Address          FiltIn FiltOut DistIn DistOut Weight RouteMap
+    10.0.0.1                                             
+    10.0.0.5                                             
+  Maximum path: 1
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    10.0.0.1              20      00:15:12
+    10.0.0.5              20      00:13:02
+  Distance: external 20 internal 200 local 200
+
+INTERNET#sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is 10.0.0.1 to network 0.0.0.0
+
+B*    0.0.0.0/0 [20/0] via 10.0.0.1, 00:15:15
+      8.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        8.8.8.0/24 is directly connected, FastEthernet0/0
+L        8.8.8.1/32 is directly connected, FastEthernet0/0
+      9.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        9.9.9.0/24 is directly connected, Ethernet2/0
+L        9.9.9.1/32 is directly connected, Ethernet2/0
+      10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+C        10.0.0.0/30 is directly connected, Serial1/0
+L        10.0.0.2/32 is directly connected, Serial1/0
+C        10.0.0.4/30 is directly connected, Serial1/1
+ --More--         L        10.0.0.6/32 is directly connected, Serial1/1
+      115.0.0.0/30 is subnetted, 1 subnets
+B        115.12.1.0 [20/0] via 10.0.0.5, 00:13:04
+      172.16.0.0/24 is subnetted, 1 subnets
+B        172.16.0.0 [20/0] via 10.0.0.1, 00:15:15
+      172.17.0.0/24 is subnetted, 1 subnets
+B        172.17.1.0 [20/0] via 10.0.0.5, 00:13:04
+      200.0.0.0/30 is subnetted, 1 subnets
+B        200.0.0.0 [20/0] via 10.0.0.1, 00:15:15
+INTERNET#
+INTERNET#
+INTERNET#
+INTERNET#
+INTERNET#
+INTERNET#
+INTERNET#sh verison
+               ^
+% Invalid input detected at '^' marker.
+
+INTERNET#show version
+Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)S6, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Fri 08-Aug-14 04:05 by prod_rel_team
+
+ROM: ROMMON Emulation Microcode
+BOOTLDR: 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)S6, RELEASE SOFTWARE (fc1)
+
+INTERNET uptime is 19 minutes
+System returned to ROM by unknown reload cause - suspect boot_data[BOOT_COUNT] 0x0, BOOT_COUNT 0, BOOTDATA 19
+System image file is "tftp://255.255.255.255/unknown"
+Last reload reason: Unknown reason
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+ --More--         
+INTERNET#how running-config
+          ^
+% Invalid input detected at '^' marker.
+
+INTERNET#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+FastEthernet0/0        8.8.8.1         YES NVRAM  up                    up      
+Serial1/0              10.0.0.2        YES NVRAM  up                    up      
+Serial1/1              10.0.0.6        YES NVRAM  up                    up      
+Serial1/2              unassigned      YES NVRAM  administratively down down    
+Serial1/3              unassigned      YES NVRAM  administratively down down    
+Ethernet2/0            9.9.9.1         YES NVRAM  up                    up      
+Ethernet2/1            unassigned      YES NVRAM  administratively down down    
+Ethernet2/2            unassigned      YES NVRAM  administratively down down    
+Ethernet2/3            unassigned      YES NVRAM  administratively down down    
+INTERNET#show interfaces description
+Interface                      Status         Protocol Description
+Fa0/0                          up             up       
+Se1/0                          up             up       
+Se1/1                          up             up       
+Se1/2                          admin down     down     
+Se1/3                          admin down     down     
+Et2/0                          up             up       
+Et2/1                          admin down     down     
+Et2/2                          admin down     down     
+Et2/3                          admin down     down     
+INTERNET#show interfaces
+FastEthernet0/0 is up, line protocol is up 
+  Hardware is DEC21140, address is ca01.0914.0000 (bia ca01.0914.0000)
+  Internet address is 8.8.8.1/24
+  MTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec, 
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full-duplex, 100Mb/s, 100BaseTX/FX
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output 00:00:02, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles 
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog
+     0 input packets with dribble condition detected
+     146 packets output, 16282 bytes, 0 underruns
+ --More--         
+INTERNET#how ip protocols
+          ^
+% Invalid input detected at '^' marker.
+
+INTERNET#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is 10.0.0.1 to network 0.0.0.0
+
+B*    0.0.0.0/0 [20/0] via 10.0.0.1, 00:16:19
+      8.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        8.8.8.0/24 is directly connected, FastEthernet0/0
+L        8.8.8.1/32 is directly connected, FastEthernet0/0
+      9.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        9.9.9.0/24 is directly connected, Ethernet2/0
+L        9.9.9.1/32 is directly connected, Ethernet2/0
+      10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+C        10.0.0.0/30 is directly connected, Serial1/0
+L        10.0.0.2/32 is directly connected, Serial1/0
+C        10.0.0.4/30 is directly connected, Serial1/1
+ --More--         
+INTERNET#show ip routehow ip protocolsshow ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is "bgp 65000"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  IGP synchronization is disabled
+  Automatic route summarization is disabled
+  Redistributing: connected
+  Neighbor(s):
+    Address          FiltIn FiltOut DistIn DistOut Weight RouteMap
+    10.0.0.1                                             
+    10.0.0.5                                             
+  Maximum path: 1
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    10.0.0.1              20      00:16:20
+    10.0.0.5              20      00:14:10
+  Distance: external 20 internal 200 local 200
+
+INTERNET#show version
+Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)S6, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Fri 08-Aug-14 04:05 by prod_rel_team
+
+ROM: ROMMON Emulation Microcode
+BOOTLDR: 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)S6, RELEASE SOFTWARE (fc1)
+
+INTERNET uptime is 20 minutes
+System returned to ROM by unknown reload cause - suspect boot_data[BOOT_COUNT] 0x0, BOOT_COUNT 0, BOOTDATA 19
+System image file is "tftp://255.255.255.255/unknown"
+Last reload reason: Unknown reason
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+ --More--         
+INTERNET#how running-config
+          ^
+% Invalid input detected at '^' marker.
+
+INTERNET#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+FastEthernet0/0        8.8.8.1         YES NVRAM  up                    up      
+Serial1/0              10.0.0.2        YES NVRAM  up                    up      
+Serial1/1              10.0.0.6        YES NVRAM  up                    up      
+Serial1/2              unassigned      YES NVRAM  administratively down down    
+Serial1/3              unassigned      YES NVRAM  administratively down down    
+Ethernet2/0            9.9.9.1         YES NVRAM  up                    up      
+Ethernet2/1            unassigned      YES NVRAM  administratively down down    
+Ethernet2/2            unassigned      YES NVRAM  administratively down down    
+Ethernet2/3            unassigned      YES NVRAM  administratively down down    
+INTERNET#show interfaces description
+Interface                      Status         Protocol Description
+Fa0/0                          up             up       
+Se1/0                          up             up       
+Se1/1                          up             up       
+Se1/2                          admin down     down     
+Se1/3                          admin down     down     
+Et2/0                          up             up       
+Et2/1                          admin down     down     
+Et2/2                          admin down     down     
+Et2/3                          admin down     down     
+INTERNET#show interfaces
+FastEthernet0/0 is up, line protocol is up 
+  Hardware is DEC21140, address is ca01.0914.0000 (bia ca01.0914.0000)
+  Internet address is 8.8.8.1/24
+  MTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec, 
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full-duplex, 100Mb/s, 100BaseTX/FX
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output 00:00:08, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles 
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog
+     0 input packets with dribble condition detected
+     150 packets output, 16851 bytes, 0 underruns
+ --More--         
+INTERNET#how ip protocols
+          ^
+% Invalid input detected at '^' marker.
+
+INTERNET#show ip routehow ip protocolsshow ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is "bgp 65000"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  IGP synchronization is disabled
+  Automatic route summarization is disabled
+  Redistributing: connected
+  Neighbor(s):
+    Address          FiltIn FiltOut DistIn DistOut Weight RouteMap
+    10.0.0.1                                             
+    10.0.0.5                                             
+  Maximum path: 1
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    10.0.0.1              20      00:16:46
+    10.0.0.5              20      00:14:35
+  Distance: external 20 internal 200 local 200
+
+INTERNET#sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is 10.0.0.1 to network 0.0.0.0
+
+B*    0.0.0.0/0 [20/0] via 10.0.0.1, 00:16:49
+      8.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        8.8.8.0/24 is directly connected, FastEthernet0/0
+L        8.8.8.1/32 is directly connected, FastEthernet0/0
+      9.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        9.9.9.0/24 is directly connected, Ethernet2/0
+L        9.9.9.1/32 is directly connected, Ethernet2/0
+      10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+C        10.0.0.0/30 is directly connected, Serial1/0
+L        10.0.0.2/32 is directly connected, Serial1/0
+C        10.0.0.4/30 is directly connected, Serial1/1
+ --More--         L        10.0.0.6/32 is directly connected, Serial1/1
+      115.0.0.0/30 is subnetted, 1 subnets
+B        115.12.1.0 [20/0] via 10.0.0.5, 00:14:38
+      172.16.0.0/24 is subnetted, 1 subnets
+B        172.16.0.0 [20/0] via 10.0.0.1, 00:16:49
+      172.17.0.0/24 is subnetted, 1 subnets
+B        172.17.1.0 [20/0] via 10.0.0.5, 00:14:38
+      200.0.0.0/30 is subnetted, 1 subnets
+B        200.0.0.0 [20/0] via 10.0.0.1, 00:16:49
+INTERNET#sh running con
+                     ^
+% Invalid input detected at '^' marker.
+
+INTERNET#sh running con    
+INTERNET#sh running-config 
+Building configuration...
+
+Current configuration : 1795 bytes
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname INTERNET
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+ --More--         ip cef
+no ipv6 cef
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+! 
+!
+!
+!
+!
+ --More--         !
+!
+!
+!
+interface FastEthernet0/0
+ ip address 8.8.8.1 255.255.255.0
+ duplex full
+!
+interface Serial1/0
+ ip address 10.0.0.2 255.255.255.252
+ serial restart-delay 0
+!
+interface Serial1/1
+ ip address 10.0.0.6 255.255.255.252
+ serial restart-delay 0
+!
+interface Serial1/2
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+interface Serial1/3
+ no ip address
+ --More--          shutdown
+ serial restart-delay 0
+!
+interface Ethernet2/0
+ ip address 9.9.9.1 255.255.255.0
+ duplex full
+!
+interface Ethernet2/1
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet2/2
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet2/3
+ no ip address
+ shutdown
+ duplex full
+!
+router bgp 65000
+ --More--          bgp log-neighbor-changes
+ neighbor 10.0.0.1 remote-as 65100
+ neighbor 10.0.0.5 remote-as 65100
+ !
+ address-family ipv4
+  redistribute connected
+  neighbor 10.0.0.1 activate
+  neighbor 10.0.0.1 soft-reconfiguration inbound
+  neighbor 10.0.0.5 activate
+  neighbor 10.0.0.5 soft-reconfiguration inbound
+ exit-address-family
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list customer-ILLCE1 seq 4 permit 172.16.0.0/24
+!
+route-map prefer-pe2 permit 10
+ match ip address prefix-list customer-ILLCE1
+ --More--          set local-preference 200
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+
+INTERNET# show ip int brief
+Interface              IP-Address      OK? Method Status                Protocol
+FastEthernet0/0        8.8.8.1         YES NVRAM  up                    up      
+Serial1/0              10.0.0.2        YES NVRAM  up                    up      
+Serial1/1              10.0.0.6        YES NVRAM  up                    up      
+Serial1/2              unassigned      YES NVRAM  administratively down down    
+Serial1/3              unassigned      YES NVRAM  administratively down down    
+Ethernet2/0            9.9.9.1         YES NVRAM  up                    up      
+Ethernet2/1            unassigned      YES NVRAM  administratively down down    
+Ethernet2/2            unassigned      YES NVRAM  administratively down down    
+Ethernet2/3            unassigned      YES NVRAM  administratively down down    
+INTERNET#show run | section interface
+interface FastEthernet0/0
+ ip address 8.8.8.1 255.255.255.0
+ duplex full
+interface Serial1/0
+ ip address 10.0.0.2 255.255.255.252
+ serial restart-delay 0
+interface Serial1/1
+ ip address 10.0.0.6 255.255.255.252
+ serial restart-delay 0
+interface Serial1/2
+ no ip address
+ shutdown
+ serial restart-delay 0
+interface Serial1/3
+ no ip address
+ shutdown
+ serial restart-delay 0
+interface Ethernet2/0
+ ip address 9.9.9.1 255.255.255.0
+ duplex full
+interface Ethernet2/1
+ no ip address
+ shutdown
+ --More--         INTERNET#how run | section router
+          ^
+% Invalid input detected at '^' marker.
+
+INTERNET#show run | section iphow run | section routershow run | section router
+router bgp 65000
+ bgp log-neighbor-changes
+ neighbor 10.0.0.1 remote-as 65100
+ neighbor 10.0.0.5 remote-as 65100
+ !
+ address-family ipv4
+  redistribute connected
+  neighbor 10.0.0.1 activate
+  neighbor 10.0.0.1 soft-reconfiguration inbound
+  neighbor 10.0.0.5 activate
+  neighbor 10.0.0.5 soft-reconfiguration inbound
+ exit-address-family
+INTERNET#show run | section ip
+no ip icmp rate-limit unreachable
+no ip domain lookup
+ip cef
+no ipv6 cef
+ip tcp synwait-time 5
+ ip address 8.8.8.1 255.255.255.0
+ ip address 10.0.0.2 255.255.255.252
+ ip address 10.0.0.6 255.255.255.252
+ no ip address
+ no ip address
+ ip address 9.9.9.1 255.255.255.0
+ no ip address
+ no ip address
+ no ip address
+ address-family ipv4
+  redistribute connected
+  neighbor 10.0.0.1 activate
+  neighbor 10.0.0.1 soft-reconfiguration inbound
+  neighbor 10.0.0.5 activate
+  neighbor 10.0.0.5 soft-reconfiguration inbound
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+ --More--         ip prefix-list customer-ILLCE1 seq 4 permit 172.16.0.0/24
+ match ip address prefix-list customer-ILLCE1
+INTERNET#show ip interface brief | include Loopback
+INTERNET#
+INTERNET#show ip bgp summary
+BGP router identifier 10.0.0.6, local AS number 65000
+BGP table version is 10, main routing table version 10
+9 network entries using 1296 bytes of memory
+12 path entries using 960 bytes of memory
+4/4 BGP path/bestpath attribute entries using 544 bytes of memory
+2 BGP AS-PATH entries using 48 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 2848 total bytes of memory
+BGP activity 9/0 prefixes, 12/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.0.0.1        4        65100      25      30       10    0    0 00:22:18        3
+10.0.0.5        4        65100      25      30       10    0    0 00:22:18        5
+INTERNET#show ip bgp
+BGP table version is 10, local router ID is 10.0.0.6
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *   0.0.0.0          10.0.0.5                               0 65100 65110 i
+ *>                   10.0.0.1                               0 65100 65110 i
+ *>  8.8.8.0/24       0.0.0.0                  0         32768 ?
+ *>  9.9.9.0/24       0.0.0.0                  0         32768 ?
+ *>  10.0.0.0/30      0.0.0.0                  0         32768 ?
+ *>  10.0.0.4/30      0.0.0.0                  0         32768 ?
+ *>  115.12.1.0/30    10.0.0.5                               0 65100 65120 ?
+ *   172.16.0.0/24    10.0.0.5                               0 65100 65110 ?
+ *>                   10.0.0.1                               0 65100 65110 ?
+ *>  172.17.1.0/24    10.0.0.5                               0 65100 65120 ?
+ *   200.0.0.0/30     10.0.0.5                               0 65100 65110 ?
+ *>                   10.0.0.1                               0 65100 65110 ?
+INTERNET#show ip bgp neighbors
+BGP neighbor is 10.0.0.1,  remote AS 65100, external link
+  BGP version 4, remote router ID 1.1.1.1
+  BGP state = Established, up for 00:22:18
+  Last read 00:00:03, last write 00:00:29, hold time is 180, keepalive interval is 60 seconds
+  Neighbor sessions:
+    1 active, is not multisession capable (disabled)
+  Neighbor capabilities:
+    Route refresh: advertised and received(new)
+    Four-octets ASN Capability: advertised and received
+    Address family IPv4 Unicast: advertised and received
+    Enhanced Refresh Capability: advertised and received
+    Multisession Capability: 
+    Stateful switchover support enabled: NO for session 1
+  Message statistics:
+    InQ depth is 0
+    OutQ depth is 0
+    
+                         Sent       Rcvd
+    Opens:                  1          1
+    Notifications:          0          0
+    Updates:                5          3
+    Keepalives:            24         21
+ --More--         
+INTERNET#how ip bgp neighbors | include BGP state
+          ^
+% Invalid input detected at '^' marker.
+
+INTERNET#show ip bgp neighbors | include AS
+BGP neighbor is 10.0.0.1,  remote AS 65100, external link
+    Four-octets ASN Capability: advertised and received
+BGP neighbor is 10.0.0.5,  remote AS 65100, external link
+    Four-octets ASN Capability: advertised and received
+INTERNET#show ip bgp neighbors | include Prefix
+  Prefix activity:               ----       ----
+    Prefixes Current:               9          3 (Consumes 240 bytes)
+    Prefixes Total:                 9          3
+  Local Policy Denied Prefixes:    --------    -------
+  Prefix activity:               ----       ----
+    Prefixes Current:               9          5 (Consumes 400 bytes)
+    Prefixes Total:                 9          5
+  Local Policy Denied Prefixes:    --------    -------
+INTERNET#show ip route bgp
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is 10.0.0.1 to network 0.0.0.0
+
+B*    0.0.0.0/0 [20/0] via 10.0.0.1, 00:19:18
+      115.0.0.0/30 is subnetted, 1 subnets
+B        115.12.1.0 [20/0] via 10.0.0.5, 00:17:07
+      172.16.0.0/24 is subnetted, 1 subnets
+B        172.16.0.0 [20/0] via 10.0.0.1, 00:19:18
+      172.17.0.0/24 is subnetted, 1 subnets
+B        172.17.1.0 [20/0] via 10.0.0.5, 00:17:07
+      200.0.0.0/30 is subnetted, 1 subnets
+B        200.0.0.0 [20/0] via 10.0.0.1, 00:19:18
+INTERNET#show ip bgp neighbors 10.0.0.1 advertised-routes
+BGP table version is 10, local router ID is 10.0.0.6
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *>  0.0.0.0          10.0.0.1                               0 65100 65110 i
+ *>  8.8.8.0/24       0.0.0.0                  0         32768 ?
+ *>  9.9.9.0/24       0.0.0.0                  0         32768 ?
+ *>  10.0.0.0/30      0.0.0.0                  0         32768 ?
+ *>  10.0.0.4/30      0.0.0.0                  0         32768 ?
+ *>  115.12.1.0/30    10.0.0.5                               0 65100 65120 ?
+ *>  172.16.0.0/24    10.0.0.1                               0 65100 65110 ?
+ *>  172.17.1.0/24    10.0.0.5                               0 65100 65120 ?
+ *>  200.0.0.0/30     10.0.0.1                               0 65100 65110 ?
+
+Total number of prefixes 9 
+INTERNET#show ip bgp neighbors 10.0.0.1 received-routes
+BGP table version is 10, local router ID is 10.0.0.6
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *>  0.0.0.0          10.0.0.1                               0 65100 65110 i
+ *>  172.16.0.0/24    10.0.0.1                               0 65100 65110 ?
+ *>  200.0.0.0/30     10.0.0.1                               0 65100 65110 ?
+
+Total number of prefixes 3 
+INTERNET#show ip bgp neighbors 10.0.0.5 advertised-routes
+BGP table version is 10, local router ID is 10.0.0.6
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *>  0.0.0.0          10.0.0.1                               0 65100 65110 i
+ *>  8.8.8.0/24       0.0.0.0                  0         32768 ?
+ *>  9.9.9.0/24       0.0.0.0                  0         32768 ?
+ *>  10.0.0.0/30      0.0.0.0                  0         32768 ?
+ *>  10.0.0.4/30      0.0.0.0                  0         32768 ?
+ *>  115.12.1.0/30    10.0.0.5                               0 65100 65120 ?
+ *>  172.16.0.0/24    10.0.0.1                               0 65100 65110 ?
+ *>  172.17.1.0/24    10.0.0.5                               0 65100 65120 ?
+ *>  200.0.0.0/30     10.0.0.1                               0 65100 65110 ?
+
+Total number of prefixes 9 
+INTERNET#show ip bgp neighbors 10.0.0.5 received-routes
+BGP table version is 10, local router ID is 10.0.0.6
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *   0.0.0.0          10.0.0.5                               0 65100 65110 i
+ *>  115.12.1.0/30    10.0.0.5                               0 65100 65120 ?
+ *   172.16.0.0/24    10.0.0.5                               0 65100 65110 ?
+ *>  172.17.1.0/24    10.0.0.5                               0 65100 65120 ?
+ *   200.0.0.0/30     10.0.0.5                               0 65100 65110 ?
+
+Total number of prefixes 5 
+INTERNET#show ip bgp neighbors 10.0.0.5 received-routesadvertised-routes1 received-routes  advertised-routesroute bgp                               bgp neighbors | include PrefixAS    how ip bgp neighbors | include BGP stateshow ip bgp neighbors | include BGP state
+  BGP state = Established, up for 00:22:49
+  BGP state = Established, up for 00:22:49
+INTERNET#ping 172.16.0.0.  1               

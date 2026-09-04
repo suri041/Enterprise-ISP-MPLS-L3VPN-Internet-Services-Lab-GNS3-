@@ -1,0 +1,1857 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.09.04 15:03:05 =~=~=~=~=~=~=~=~=~=~=~=
+show version
+Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)S6, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Fri 08-Aug-14 04:05 by prod_rel_team
+
+ROM: ROMMON Emulation Microcode
+BOOTLDR: 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)S6, RELEASE SOFTWARE (fc1)
+
+P1 uptime is 22 minutes
+System returned to ROM by unknown reload cause - suspect boot_data[BOOT_COUNT] 0x0, BOOT_COUNT 0, BOOTDATA 19
+System image file is "tftp://255.255.255.255/unknown"
+Last reload reason: Unknown reason
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+ --More--         
+
+
+P1#show running-config
+Building configuration...
+
+Current configuration : 1617 bytes
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname P1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$wrEV$IMh3UyrrTvgxQV2mZIs1V0
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+ --More--         
+
+P1#show ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 1.1.1.1
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    1.1.1.1 0.0.0.0 area 0
+    10.0.0.0 0.0.0.3 area 0
+    10.0.0.8 0.0.0.3 area 0
+    10.0.0.20 0.0.0.3 area 0
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    4.4.4.4              110      00:20:04
+    3.3.3.3              110      00:20:14
+    2.2.2.2              110      00:20:04
+  Distance: (default is 110)
+
+Routing Protocol is "bgp 65100"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+ --More--           IGP synchronization is disabled
+  Automatic route summarization is disabled
+  Neighbor(s):
+    Address          FiltIn FiltOut DistIn DistOut Weight RouteMap
+    3.3.3.3                                              
+    10.0.0.2                                             
+  Maximum path: 1
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    3.3.3.3              200      00:19:23
+    10.0.0.2              20      00:21:20
+  Distance: external 20 internal 200 local 200
+
+P1#show ip protocolshow startup-configshow running-confighow clock          show versionhow clock           show clockhow version
+Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)S6, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Fri 08-Aug-14 04:05 by prod_rel_team
+
+ROM: ROMMON Emulation Microcode
+BOOTLDR: 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)S6, RELEASE SOFTWARE (fc1)
+
+P1 uptime is 23 minutes
+System returned to ROM by unknown reload cause - suspect boot_data[BOOT_COUNT] 0x0, BOOT_COUNT 0, BOOTDATA 19
+System image file is "tftp://255.255.255.255/unknown"
+Last reload reason: Unknown reason
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+ --More--         compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Cisco 7206VXR (NPE400) processor (revision A) with 491520K/32768K bytes of memory.
+Processor board ID 4279256517
+R7000 CPU at 150MHz, Implementation 39, Rev 2.1, 256KB L2 Cache
+6 slot VXR midplane, Version 2.1
+
+Last reset from power-on
+
+PCI bus mb0_mb1 (Slots 0, 1, 3 and 5) has a capacity of 600 bandwidth points.
+Current configuration on bus mb0_mb1 has a total of 200 bandwidth points. 
+This configuration is within the PCI bus capacity and is supported. 
+
+PCI bus mb2 (Slots 2, 4, 6) has a capacity of 600 bandwidth points.
+ --More--         Current configuration on bus mb2 has a total of 0 bandwidth points 
+This configuration is within the PCI bus capacity and is supported. 
+
+Please refer to the following document "Cisco 7200 Series Port Adaptor
+Hardware Configuration Guidelines" on Cisco.com <http://www.cisco.com>
+for c7200 bandwidth points oversubscription and usage guidelines.
+
+
+1 FastEthernet interface
+4 Serial interfaces
+509K bytes of NVRAM.
+
+8192K bytes of Flash internal SIMM (Sector size 256K).
+Configuration register is 0x2102
+
+P1#show versionip protocolshow startup-configshow running-confighow clock                 show clock
+*14:29:22.331 UTC Fri Sep 4 2026
+P1#show clockversionclock            show clockversionip protocolshow startup-configshow running-confighow clock          show running-config
+Building configuration...
+
+Current configuration : 1617 bytes
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname P1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$wrEV$IMh3UyrrTvgxQV2mZIs1V0
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+ --More--         !
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+username cisco password 7 095F5B1B10
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+! 
+!
+ --More--         !
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+!
+interface FastEthernet0/0
+ no ip address
+ shutdown
+ duplex full
+!
+interface Serial1/0
+ ip address 10.0.0.1 255.255.255.252
+ serial restart-delay 0
+!
+interface Serial1/1
+ ip address 10.0.0.9 255.255.255.252
+ mpls ip
+ serial restart-delay 0
+ --More--         !
+interface Serial1/2
+ ip address 10.0.0.21 255.255.255.252
+ mpls ip
+ serial restart-delay 0
+!
+interface Serial1/3
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+router ospf 1
+ network 1.1.1.1 0.0.0.0 area 0
+ network 10.0.0.0 0.0.0.3 area 0
+ network 10.0.0.8 0.0.0.3 area 0
+ network 10.0.0.20 0.0.0.3 area 0
+!
+router bgp 65100
+ bgp log-neighbor-changes
+ neighbor 3.3.3.3 remote-as 65100
+ neighbor 3.3.3.3 update-source Loopback0
+ neighbor 3.3.3.3 soft-reconfiguration inbound
+ neighbor 10.0.0.2 remote-as 65000
+ --More--          neighbor 10.0.0.2 soft-reconfiguration inbound
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ --More--          stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+
+P1#show running-configclock         versionip protocolshow startup-configshow running-confighow startup-config          show startup-config
+Using 1687 out of 522232 bytes!
+!
+!
+!
+
+!
+! Last configuration change at 10:42:25 UTC Fri Aug 14 2026
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname P1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$wrEV$IMh3UyrrTvgxQV2mZIs1V0
+!
+no aaa new-model
+no ip icmp rate-limit unreachable
+ --More--         !
+!
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+username cisco password 7 095F5B1B10
+!
+!
+!
+ --More--         !
+!
+ip tcp synwait-time 5
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+!
+interface FastEthernet0/0
+ no ip address
+ shutdown
+ duplex full
+!
+interface Serial1/0
+ ip address 10.0.0.1 255.255.255.252
+ serial restart-delay 0
+ --More--         !
+interface Serial1/1
+ ip address 10.0.0.9 255.255.255.252
+ mpls ip
+ serial restart-delay 0
+!
+interface Serial1/2
+ ip address 10.0.0.21 255.255.255.252
+ mpls ip
+ serial restart-delay 0
+!
+interface Serial1/3
+ no ip address
+ shutdown
+ serial restart-delay 0
+!
+router ospf 1
+ network 1.1.1.1 0.0.0.0 area 0
+ network 10.0.0.0 0.0.0.3 area 0
+ network 10.0.0.8 0.0.0.3 area 0
+ network 10.0.0.20 0.0.0.3 area 0
+!
+router bgp 65100
+ --More--          bgp log-neighbor-changes
+ neighbor 3.3.3.3 remote-as 65100
+ neighbor 3.3.3.3 update-source Loopback0
+ neighbor 3.3.3.3 soft-reconfiguration inbound
+ neighbor 10.0.0.2 remote-as 65000
+ neighbor 10.0.0.2 soft-reconfiguration inbound
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ --More--          stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+
+P1#show startup-configrunning-configclock         versionip protocolshow startup-configshow ip protocols 
+*** IP Routing is NSF aware ***
+
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 1.1.1.1
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    1.1.1.1 0.0.0.0 area 0
+    10.0.0.0 0.0.0.3 area 0
+    10.0.0.8 0.0.0.3 area 0
+    10.0.0.20 0.0.0.3 area 0
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    4.4.4.4              110      00:20:37
+    3.3.3.3              110      00:20:47
+    2.2.2.2              110      00:20:37
+  Distance: (default is 110)
+
+Routing Protocol is "bgp 65100"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+ --More--           IGP synchronization is disabled
+  Automatic route summarization is disabled
+  Neighbor(s):
+    Address          FiltIn FiltOut DistIn DistOut Weight RouteMap
+    3.3.3.3                                              
+    10.0.0.2                                             
+  Maximum path: 1
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    3.3.3.3              200      00:19:56
+    10.0.0.2              20      00:21:53
+  Distance: external 20 internal 200 local 200
+
+P1#
+P1#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+FastEthernet0/0        unassigned      YES NVRAM  administratively down down    
+Serial1/0              10.0.0.1        YES NVRAM  up                    up      
+Serial1/1              10.0.0.9        YES NVRAM  up                    up      
+Serial1/2              10.0.0.21       YES NVRAM  up                    up      
+Serial1/3              unassigned      YES NVRAM  administratively down down    
+Loopback0              1.1.1.1         YES NVRAM  up                    up      
+P1#show interfaces description
+Interface                      Status         Protocol Description
+Fa0/0                          admin down     down     
+Se1/0                          up             up       
+Se1/1                          up             up       
+Se1/2                          up             up       
+Se1/3                          admin down     down     
+Lo0                            up             up       
+P1#show interfaces
+FastEthernet0/0 is administratively down, line protocol is down 
+  Hardware is DEC21140, address is ca02.2b40.0000 (bia ca02.2b40.0000)
+  MTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec, 
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full-duplex, 100Mb/s, 100BaseTX/FX
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles 
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog
+     0 input packets with dribble condition detected
+     0 packets output, 0 bytes, 0 underruns
+ --More--         
+P1#how interfaces | include error
+    ^
+% Invalid input detected at '^' marker.
+
+P1#show interfaces | include CRC
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+P1#show interfaces | include drops
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+     0 unknown protocol drops
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Output queue: 0/1000/64/0 (size/max total/threshold/drops) 
+     0 unknown protocol drops
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Output queue: 0/1000/64/0 (size/max total/threshold/drops) 
+     0 unknown protocol drops
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Output queue: 0/1000/64/0 (size/max total/threshold/drops) 
+     0 unknown protocol drops
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Output queue: 0/1000/64/0 (size/max total/threshold/drops) 
+     0 unknown protocol drops
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+     0 unknown protocol drops
+P1#
+P1#show running-config | section interface
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+interface FastEthernet0/0
+ no ip address
+ shutdown
+ duplex full
+interface Serial1/0
+ ip address 10.0.0.1 255.255.255.252
+ serial restart-delay 0
+interface Serial1/1
+ ip address 10.0.0.9 255.255.255.252
+ mpls ip
+ serial restart-delay 0
+interface Serial1/2
+ ip address 10.0.0.21 255.255.255.252
+ mpls ip
+ serial restart-delay 0
+interface Serial1/3
+ no ip address
+ shutdown
+ serial restart-delay 0
+P1#
+P1#
+P1#show running-config | section interfaceinterfaces | include drops        CRC  how interfaces | include errorshow interfaces                descriptionp interface brief    protocols      startup-configrunning-configstartup-configip protocols  interface briefnterfaces description            how interfaces | include errorshow interfaces | include CRC how interfaces | include error        show interfaces | include error
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 output errors, 0 collisions, 0 interface resets
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 output errors, 0 collisions, 1 interface resets
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 output errors, 0 collisions, 2 interface resets
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 output errors, 0 collisions, 1 interface resets
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 output errors, 0 collisions, 0 interface resets
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+     0 output errors, 0 collisions, 0 interface resets
+P1#
+P1#show ip interface brief | include Loopback
+Loopback0              1.1.1.1         YES NVRAM  up                    up      
+P1#show running-config | section interface Loopback
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+P1#show ip interface Loopback0
+Loopback0 is up, line protocol is up
+  Internet address is 1.1.1.1/32
+  Broadcast address is 255.255.255.255
+  Address determined by non-volatile memory
+  MTU is 1514 bytes
+  Helper address is not set
+  Directed broadcast forwarding is disabled
+  Multicast reserved groups joined: 224.0.0.5
+  Outgoing access list is not set
+  Inbound  access list is not set
+  Proxy ARP is enabled
+  Local Proxy ARP is disabled
+  Security level is default
+  Split horizon is enabled
+  ICMP redirects are always sent
+  ICMP unreachables are always sent
+  ICMP mask replies are never sent
+  IP fast switching is enabled
+  IP Flow switching is disabled
+  IP CEF switching is enabled
+  IP CEF switching turbo vector
+  IP Null turbo vector
+  Associated unicast routing topologies:
+ --More--         
+P1#how ip route 1.1.1.1           show ip route 1.1.1.1
+Routing entry for 1.1.1.1/32
+  Known via "connected", distance 0, metric 0 (connected, via interface)
+  Routing Descriptor Blocks:
+  * directly connected, via Loopback0
+      Route metric is 0, traffic share count is 1
+P1#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is 3.3.3.3 to network 0.0.0.0
+
+B*    0.0.0.0/0 [200/0] via 3.3.3.3, 00:21:08
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      2.0.0.0/32 is subnetted, 1 subnets
+O        2.2.2.2 [110/65] via 10.0.0.22, 00:24:07, Serial1/2
+      3.0.0.0/32 is subnetted, 1 subnets
+O        3.3.3.3 [110/65] via 10.0.0.10, 00:22:21, Serial1/1
+      4.0.0.0/32 is subnetted, 1 subnets
+O        4.4.4.4 [110/129] via 10.0.0.22, 00:21:49, Serial1/2
+                 [110/129] via 10.0.0.10, 00:21:59, Serial1/1
+      8.0.0.0/24 is subnetted, 1 subnets
+ --More--         
+P1#how ip route connected
+    ^
+% Invalid input detected at '^' marker.
+
+P1#show ip route static
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is 3.3.3.3 to network 0.0.0.0
+
+P1#show ip route ospf
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is 3.3.3.3 to network 0.0.0.0
+
+      2.0.0.0/32 is subnetted, 1 subnets
+O        2.2.2.2 [110/65] via 10.0.0.22, 00:24:08, Serial1/2
+      3.0.0.0/32 is subnetted, 1 subnets
+O        3.3.3.3 [110/65] via 10.0.0.10, 00:22:22, Serial1/1
+      4.0.0.0/32 is subnetted, 1 subnets
+O        4.4.4.4 [110/129] via 10.0.0.22, 00:21:50, Serial1/2
+                 [110/129] via 10.0.0.10, 00:22:00, Serial1/1
+      10.0.0.0/8 is variably subnetted, 9 subnets, 2 masks
+O        10.0.0.12/30 [110/128] via 10.0.0.22, 00:22:00, Serial1/2
+O        10.0.0.16/30 [110/128] via 10.0.0.10, 00:22:00, Serial1/1
+P1#show ip route bgp
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is 3.3.3.3 to network 0.0.0.0
+
+B*    0.0.0.0/0 [200/0] via 3.3.3.3, 00:21:09
+      8.0.0.0/24 is subnetted, 1 subnets
+B        8.8.8.0 [20/0] via 10.0.0.2, 00:23:06
+      9.0.0.0/24 is subnetted, 1 subnets
+B        9.9.9.0 [20/0] via 10.0.0.2, 00:23:06
+      10.0.0.0/8 is variably subnetted, 9 subnets, 2 masks
+B        10.0.0.4/30 [20/0] via 10.0.0.2, 00:23:06
+      172.16.0.0/24 is subnetted, 1 subnets
+B        172.16.0.0 [200/0] via 3.3.3.3, 00:21:09
+      200.0.0.0/30 is subnetted, 1 subnets
+B        200.0.0.0 [200/0] via 3.3.3.3, 00:21:09
+P1#
+P1#show ip route 2.2.2.2
+Routing entry for 2.2.2.2/32
+  Known via "ospf 1", distance 110, metric 65, type intra area
+  Last update from 10.0.0.22 on Serial1/2, 00:24:08 ago
+  Routing Descriptor Blocks:
+  * 10.0.0.22, from 2.2.2.2, 00:24:08 ago, via Serial1/2
+      Route metric is 65, traffic share count is 1
+P1#show ip route 3.3.3.3
+Routing entry for 3.3.3.3/32
+  Known via "ospf 1", distance 110, metric 65, type intra area
+  Last update from 10.0.0.10 on Serial1/1, 00:22:22 ago
+  Routing Descriptor Blocks:
+  * 10.0.0.10, from 3.3.3.3, 00:22:22 ago, via Serial1/1
+      Route metric is 65, traffic share count is 1
+P1#show ip route 4.4.4.4
+Routing entry for 4.4.4.4/32
+  Known via "ospf 1", distance 110, metric 129, type intra area
+  Last update from 10.0.0.22 on Serial1/2, 00:21:52 ago
+  Routing Descriptor Blocks:
+    10.0.0.22, from 4.4.4.4, 00:21:52 ago, via Serial1/2
+      Route metric is 129, traffic share count is 1
+  * 10.0.0.10, from 4.4.4.4, 00:22:02 ago, via Serial1/1
+      Route metric is 129, traffic share count is 1
+P1#
+P1#show running-config | section router ospf
+router ospf 1
+ network 1.1.1.1 0.0.0.0 area 0
+ network 10.0.0.0 0.0.0.3 area 0
+ network 10.0.0.8 0.0.0.3 area 0
+ network 10.0.0.20 0.0.0.3 area 0
+P1#show ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 1.1.1.1
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    1.1.1.1 0.0.0.0 area 0
+    10.0.0.0 0.0.0.3 area 0
+    10.0.0.8 0.0.0.3 area 0
+    10.0.0.20 0.0.0.3 area 0
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    4.4.4.4              110      00:22:36
+    3.3.3.3              110      00:22:46
+    2.2.2.2              110      00:22:36
+  Distance: (default is 110)
+
+Routing Protocol is "bgp 65100"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+ --More--         
+P1#how ip ospf
+    ^
+% Invalid input detected at '^' marker.
+
+P1#show ip ospf interface brief
+Interface    PID   Area            IP Address/Mask    Cost  State Nbrs F/C
+Lo0          1     0               1.1.1.1/32         1     LOOP  0/0
+Se1/2        1     0               10.0.0.21/30       64    P2P   1/1
+Se1/1        1     0               10.0.0.9/30        64    P2P   1/1
+Se1/0        1     0               10.0.0.1/30        64    P2P   0/0
+P1#show ip ospf interface
+Loopback0 is up, line protocol is up 
+  Internet Address 1.1.1.1/32, Area 0, Attached via Network Statement
+  Process ID 1, Router ID 1.1.1.1, Network Type LOOPBACK, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Loopback interface is treated as a stub Host
+Serial1/2 is up, line protocol is up 
+  Internet Address 10.0.0.21/30, Area 0, Attached via Network Statement
+  Process ID 1, Router ID 1.1.1.1, Network Type POINT_TO_POINT, Cost: 64
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           64        no          no            Base
+  Transmit Delay is 1 sec, State POINT_TO_POINT
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:08
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Index 4/4, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 4 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+ --More--             Adjacent with neighbor 2.2.2.2
+  Suppress hello for 0 neighbor(s)
+Serial1/1 is up, line protocol is up 
+  Internet Address 10.0.0.9/30, Area 0, Attached via Network Statement
+  Process ID 1, Router ID 1.1.1.1, Network Type POINT_TO_POINT, Cost: 64
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           64        no          no            Base
+  Transmit Delay is 1 sec, State POINT_TO_POINT
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:00
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Index 3/3, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 1
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 3.3.3.3
+  Suppress hello for 0 neighbor(s)
+Serial1/0 is up, line protocol is up 
+  Internet Address 10.0.0.1/30, Area 0, Attached via Network Statement
+ --More--           Process ID 1, Router ID 1.1.1.1, Network Type POINT_TO_POINT, Cost: 64
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           64        no          no            Base
+  Transmit Delay is 1 sec, State POINT_TO_POINT
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:04
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Index 2/2, flood queue length 0
+  Next 0x0(0)/0x0(0)
+  Last flood scan length is 0, maximum is 0
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 0, Adjacent neighbor count is 0 
+  Suppress hello for 0 neighbor(s)
+P1#show ip ospf interface briefhow ip ospf                 show ip protocolsrunning-config | section router ospfip protocols                        running-config | section router ospfip route 4.4.4.4                    running-config | section router ospfip protocols                        how ip ospf      show ip ospf interface briefhow ip ospf                           show ip ospf
+ Routing Process "ospf 1" with ID 1.1.1.1
+ Start time: 00:00:18.168, Time elapsed: 00:25:23.852
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ Supports Link-local Signaling (LLS)
+ Supports area transit capability
+ Supports NSSA (compatible with RFC 3101)
+ Event-log enabled, Maximum number of events: 1000, Mode: cyclic
+ Router is not originating router-LSAs with maximum metric
+ Initial SPF schedule delay 5000 msecs
+ Minimum hold time between two consecutive SPFs 10000 msecs
+ Maximum wait time between two consecutive SPFs 10000 msecs
+ Incremental-SPF disabled
+ Minimum LSA interval 5 secs
+ Minimum LSA arrival 1000 msecs
+ LSA group pacing timer 240 secs
+ Interface flood pacing timer 33 msecs
+ Retransmission pacing timer 66 msecs
+ Number of external LSA 0. Checksum Sum 0x000000
+ Number of opaque AS LSA 0. Checksum Sum 0x000000
+ Number of DCbitless external and opaque AS LSA 0
+ Number of DoNotAge external and opaque AS LSA 0
+ Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+ --More--          Number of areas transit capable is 0
+ External flood list length 0
+ IETF NSF helper support enabled
+ Cisco NSF helper support enabled
+ Reference bandwidth unit is 100 mbps
+    Area BACKBONE(0)
+        Number of interfaces in this area is 4 (1 loopback)
+	Area has no authentication
+	SPF algorithm last executed 00:22:48.932 ago
+	SPF algorithm executed 7 times
+	Area ranges are
+	Number of LSA 4. Checksum Sum 0x013C99
+	Number of opaque link LSA 0. Checksum Sum 0x000000
+	Number of DCbitless LSA 0
+	Number of indication LSA 0
+	Number of DoNotAge LSA 0
+	Flood list length 0
+
+P1#show ip ospf interface briefhow ip ospf                 show ip protocolshow ip ospf      show ip ospf interface brief                            show ip ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+2.2.2.2           0   FULL/  -        00:00:33    10.0.0.22       Serial1/2
+3.3.3.3           0   FULL/  -        00:00:33    10.0.0.10       Serial1/1
+P1#show ip ospf neighbor detail
+ Neighbor 2.2.2.2, interface address 10.0.0.22
+    In the area 0 via interface Serial1/2
+    Neighbor priority is 0, State is FULL, 6 state changes
+    DR is 0.0.0.0 BDR is 0.0.0.0
+    Options is 0x12 in Hello (E-bit, L-bit)
+    Options is 0x52 in DBD (E-bit, L-bit, O-bit)
+    LLS Options is 0x1 (LR)
+    Dead timer due in 00:00:31
+    Neighbor is up for 00:25:29
+    Index 1/1, retransmission queue length 0, number of retransmission 2
+    First 0x0(0)/0x0(0) Next 0x0(0)/0x0(0)
+    Last retransmission scan length is 1, maximum is 1
+    Last retransmission scan time is 0 msec, maximum is 0 msec
+ Neighbor 3.3.3.3, interface address 10.0.0.10
+    In the area 0 via interface Serial1/1
+    Neighbor priority is 0, State is FULL, 6 state changes
+    DR is 0.0.0.0 BDR is 0.0.0.0
+    Options is 0x12 in Hello (E-bit, L-bit)
+    Options is 0x52 in DBD (E-bit, L-bit, O-bit)
+    LLS Options is 0x1 (LR)
+    Dead timer due in 00:00:32
+    Neighbor is up for 00:23:35
+ --More--             Index 2/2, retransmission queue length 0, number of retransmission 1
+    First 0x0(0)/0x0(0) Next 0x0(0)/0x0(0)
+    Last retransmission scan length is 1, maximum is 1
+    Last retransmission scan time is 0 msec, maximum is 0 msec
+P1# show ip ospf neighbor detail                            show ip ospf database
+
+            OSPF Router with ID (1.1.1.1) (Process ID 1)
+
+		Router Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+1.1.1.1         1.1.1.1         1425        0x80000004 0x005CC1 6
+2.2.2.2         2.2.2.2         1401        0x80000004 0x00778D 6
+3.3.3.3         3.3.3.3         1405        0x80000004 0x003331 5
+4.4.4.4         4.4.4.4         1401        0x80000004 0x00351A 5
+P1#show ip ospf database router
+
+            OSPF Router with ID (1.1.1.1) (Process ID 1)
+
+		Router Link States (Area 0)
+
+  LS age: 1425
+  Options: (No TOS-capability, DC)
+  LS Type: Router Links
+  Link State ID: 1.1.1.1
+  Advertising Router: 1.1.1.1
+  LS Seq Number: 80000004
+  Checksum: 0x5CC1
+  Length: 96
+  Number of Links: 6
+
+    Link connected to: a Stub Network
+     (Link ID) Network/subnet number: 1.1.1.1
+     (Link Data) Network Mask: 255.255.255.255
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: another Router (point-to-point)
+     (Link ID) Neighboring Router ID: 2.2.2.2
+ --More--         
+P1#how ip ospf database network
+    ^
+% Invalid input detected at '^' marker.
+
+P1#show ip ospf database summary
+
+            OSPF Router with ID (1.1.1.1) (Process ID 1)
+P1#show ip ospf database external
+
+            OSPF Router with ID (1.1.1.1) (Process ID 1)
+P1#show ip ospf database router self-originateexternal             summary how ip ospf database network show ip ospf database router show ip ospf database      show ip ospf database router show ip ospf database      show ip ospf neighbor detail        detail show ip ospf database      show ip ospf database routerhow ip ospf database network      show ip ospf database network
+
+            OSPF Router with ID (1.1.1.1) (Process ID 1)
+P1#show ip ospf database networkexternalsummary externalnetwork                              show ip ospf database router self-originate
+
+            OSPF Router with ID (1.1.1.1) (Process ID 1)
+
+		Router Link States (Area 0)
+
+  LS age: 1470
+  Options: (No TOS-capability, DC)
+  LS Type: Router Links
+  Link State ID: 1.1.1.1
+  Advertising Router: 1.1.1.1
+  LS Seq Number: 80000004
+  Checksum: 0x5CC1
+  Length: 96
+  Number of Links: 6
+
+    Link connected to: a Stub Network
+     (Link ID) Network/subnet number: 1.1.1.1
+     (Link Data) Network Mask: 255.255.255.255
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: another Router (point-to-point)
+     (Link ID) Neighboring Router ID: 2.2.2.2
+ --More--              (Link Data) Router Interface address: 10.0.0.21
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 64
+
+    Link connected to: a Stub Network
+     (Link ID) Network/subnet number: 10.0.0.20
+     (Link Data) Network Mask: 255.255.255.252
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 64
+
+    Link connected to: another Router (point-to-point)
+     (Link ID) Neighboring Router ID: 3.3.3.3
+     (Link Data) Router Interface address: 10.0.0.9
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 64
+
+    Link connected to: a Stub Network
+     (Link ID) Network/subnet number: 10.0.0.8
+     (Link Data) Network Mask: 255.255.255.252
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 64
+
+    Link connected to: a Stub Network
+ --More--              (Link ID) Network/subnet number: 10.0.0.0
+     (Link Data) Network Mask: 255.255.255.252
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 64
+
+
+P1#  ping 2.2.2.2
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 2.2.2.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 56/68/76 ms
+P1#ping 3.3.3.3
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 3.3.3.3, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 48/50/56 ms
+P1#ping 4.4.4.4
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 4.4.4.4, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 48/59/72 ms
+P1#ping 2.2.2.2 source 1.1.1.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 2.2.2.2, timeout is 2 seconds:
+Packet sent with a source address of 1.1.1.1 
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 44/53/64 ms
+P1#ping 3.3.3.3 source 1.1.1.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 3.3.3.3, timeout is 2 seconds:
+Packet sent with a source address of 1.1.1.1 
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 32/46/56 ms
+P1#ping 4.4.4.4 source 1.1.1.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 4.4.4.4, timeout is 2 seconds:
+Packet sent with a source address of 1.1.1.1 
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 48/66/72 ms
+P1#traceroute 2.2.2.2 source 1.1.1.1
+Type escape sequence to abort.
+Tracing the route to 2.2.2.2
+VRF info: (vrf in name/id, vrf out name/id)
+  1 10.0.0.22 [AS 65110] 52 msec 56 msec 44 msec
+P1#traceroute 3.3.3.3 source 1.1.1.1
+Type escape sequence to abort.
+Tracing the route to 3.3.3.3
+VRF info: (vrf in name/id, vrf out name/id)
+  1 10.0.0.10 [AS 65110] 52 msec 48 msec 48 msec
+P1#traceroute 4.4.4.4 source 1.1.1.1
+Type escape sequence to abort.
+Tracing the route to 4.4.4.4
+VRF info: (vrf in name/id, vrf out name/id)
+  1 10.0.0.10 [AS 65110] [MPLS: Label 21 Exp 0] 52 msec
+    10.0.0.22 [AS 65110] [MPLS: Label 21 Exp 0] 52 msec
+    10.0.0.10 [AS 65110] [MPLS: Label 21 Exp 0] 48 msec
+  2 10.0.0.14 [AS 65110] 80 msec
+    10.0.0.18 [AS 65110] 48 msec
+    10.0.0.14 [AS 65110] 40 msec
+P1#show running-config | include mpls
+ mpls ip
+ mpls ip
+P1#show running-config | section mpls
+ mpls ip
+ mpls ip
+P1#show mpls interfaces
+Interface              IP            Tunnel   BGP Static Operational
+Serial1/1              Yes (ldp)     No       No  No     Yes        
+Serial1/2              Yes (ldp)     No       No  No     Yes        
+P1#show mpls interfaces detail
+Interface Serial1/1:
+	Type Unknown
+	IP labeling enabled (ldp) :
+	  Interface config
+	LSP Tunnel labeling not enabled
+	IP FRR labeling not enabled
+	BGP labeling not enabled
+	MPLS operational
+	MTU = 1500
+Interface Serial1/2:
+	Type Unknown
+	IP labeling enabled (ldp) :
+	  Interface config
+	LSP Tunnel labeling not enabled
+	IP FRR labeling not enabled
+	BGP labeling not enabled
+	MPLS operational
+	MTU = 1500
+P1#show mpls ldp parameters
+LDP Feature Set Manager: State Initialized
+  LDP features:
+    Auto-Configuration
+    Basic
+    ICPM
+    IP-over-MPLS
+    IGP-Sync
+    LLAF
+    TCP-MD5-Rollover
+    TDP
+Protocol version: 1
+Session hold time: 180 sec; keep alive interval: 60 sec
+Discovery hello: holdtime: 15 sec; interval: 5 sec
+Discovery targeted hello: holdtime: 90 sec; interval: 10 sec
+Downstream on Demand max hop count: 255
+LDP for targeted sessions
+LDP initial/maximum backoff: 15/120 sec
+LDP loop detection: off
+P1#show mpls ldp discovery
+ Local LDP Identifier:
+    1.1.1.1:0
+    Discovery Sources:
+    Interfaces:
+	Serial1/1 (ldp): xmit/recv
+	    LDP Id: 3.3.3.3:0
+	Serial1/2 (ldp): xmit/recv
+	    LDP Id: 2.2.2.2:0
+P1#show mpls ldp neighbor
+    Peer LDP Ident: 2.2.2.2:0; Local LDP Ident 1.1.1.1:0
+	TCP connection: 2.2.2.2.26439 - 1.1.1.1.646
+	State: Oper; Msgs sent/rcvd: 50/47; Downstream
+	Up time: 00:28:13
+	LDP discovery sources:
+	  Serial1/2, Src IP addr: 10.0.0.22
+        Addresses bound to peer LDP Ident:
+          2.2.2.2         10.0.0.5        10.0.0.22       10.0.0.13       
+    Peer LDP Ident: 3.3.3.3:0; Local LDP Ident 1.1.1.1:0
+	TCP connection: 3.3.3.3.19917 - 1.1.1.1.646
+	State: Oper; Msgs sent/rcvd: 42/46; Downstream
+	Up time: 00:26:27
+	LDP discovery sources:
+	  Serial1/1, Src IP addr: 10.0.0.10
+        Addresses bound to peer LDP Ident:
+          10.0.0.10       3.3.3.3         10.0.0.17       200.0.0.1       
+P1#show mpls ldp neighbor detail
+    Peer LDP Ident: 2.2.2.2:0; Local LDP Ident 1.1.1.1:0
+	TCP connection: 2.2.2.2.26439 - 1.1.1.1.646
+	Password: not required, none, in use
+	State: Oper; Msgs sent/rcvd: 50/47; Downstream; Last TIB rev sent 22
+	Up time: 00:28:20; UID: 1; Peer Id 0
+	LDP discovery sources:
+	  Serial1/2; Src IP addr: 10.0.0.22 
+	    holdtime: 15000 ms, hello interval: 5000 ms
+        Addresses bound to peer LDP Ident:
+          2.2.2.2         10.0.0.5        10.0.0.22       10.0.0.13       
+	Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+	Capabilities Sent:
+	  [ICCP (type 0x0405) MajVer 1 MinVer 0]
+	  [Dynamic Announcement (0x0506)]
+	  [mLDP Point-to-Multipoint (0x0508)]
+	  [mLDP Multipoint-to-Multipoint (0x0509)]
+	  [Typed Wildcard (0x050B)]
+	Capabilities Received:
+	  [ICCP (type 0x0405) MajVer 1 MinVer 0]
+	  [Dynamic Announcement (0x0506)]
+	  [mLDP Point-to-Multipoint (0x0508)]
+	  [mLDP Multipoint-to-Multipoint (0x0509)]
+ --More--         	  [Typed Wildcard (0x050B)]
+    Peer LDP Ident: 3.3.3.3:0; Local LDP Ident 1.1.1.1:0
+	TCP connection: 3.3.3.3.19917 - 1.1.1.1.646
+	Password: not required, none, in use
+	State: Oper; Msgs sent/rcvd: 42/46; Downstream; Last TIB rev sent 22
+	Up time: 00:26:34; UID: 2; Peer Id 1
+	LDP discovery sources:
+	  Serial1/1; Src IP addr: 10.0.0.10 
+	    holdtime: 15000 ms, hello interval: 5000 ms
+        Addresses bound to peer LDP Ident:
+          10.0.0.10       3.3.3.3         10.0.0.17       200.0.0.1       
+	Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+	Capabilities Sent:
+	  [ICCP (type 0x0405) MajVer 1 MinVer 0]
+	  [Dynamic Announcement (0x0506)]
+	  [mLDP Point-to-Multipoint (0x0508)]
+	  [mLDP Multipoint-to-Multipoint (0x0509)]
+	  [Typed Wildcard (0x050B)]
+	Capabilities Received:
+	  [ICCP (type 0x0405) MajVer 1 MinVer 0]
+	  [Dynamic Announcement (0x0506)]
+	  [mLDP Point-to-Multipoint (0x0508)]
+	  [mLDP Multipoint-to-Multipoint (0x0509)]
+ --More--         	  [Typed Wildcard (0x050B)]
+P1#show mpls ldp bindings
+  lib entry: 1.1.1.1/32, rev 8
+	local binding:  label: imp-null
+	remote binding: lsr: 2.2.2.2:0, label: 16
+	remote binding: lsr: 3.3.3.3:0, label: 17
+  lib entry: 2.2.2.2/32, rev 10
+	local binding:  label: 16
+	remote binding: lsr: 2.2.2.2:0, label: imp-null
+	remote binding: lsr: 3.3.3.3:0, label: 16
+  lib entry: 3.3.3.3/32, rev 17
+	local binding:  label: 19
+	remote binding: lsr: 3.3.3.3:0, label: imp-null
+	remote binding: lsr: 2.2.2.2:0, label: 19
+  lib entry: 4.4.4.4/32, rev 22
+	local binding:  label: 21
+	remote binding: lsr: 3.3.3.3:0, label: 21
+	remote binding: lsr: 2.2.2.2:0, label: 21
+  lib entry: 10.0.0.0/30, rev 2
+	local binding:  label: imp-null
+	remote binding: lsr: 3.3.3.3:0, label: 20
+  lib entry: 10.0.0.4/30, rev 15
+	remote binding: lsr: 2.2.2.2:0, label: imp-null
+	remote binding: lsr: 3.3.3.3:0, label: 19
+  lib entry: 10.0.0.8/30, rev 4
+ --More--         	local binding:  label: imp-null
+ --More--         
+P1#how mpls ldp bindings | include 2.2.2.2
+    ^
+% Invalid input detected at '^' marker.
+
+P1#show mpls ldp bindings | include 3.3.3.3
+	remote binding: lsr: 3.3.3.3:0, label: 17
+	remote binding: lsr: 3.3.3.3:0, label: 16
+  lib entry: 3.3.3.3/32, rev 17
+	remote binding: lsr: 3.3.3.3:0, label: imp-null
+	remote binding: lsr: 3.3.3.3:0, label: 21
+	remote binding: lsr: 3.3.3.3:0, label: 20
+	remote binding: lsr: 3.3.3.3:0, label: 19
+	remote binding: lsr: 3.3.3.3:0, label: imp-null
+	remote binding: lsr: 3.3.3.3:0, label: 22
+	remote binding: lsr: 3.3.3.3:0, label: imp-null
+	remote binding: lsr: 3.3.3.3:0, label: 18
+	remote binding: lsr: 3.3.3.3:0, label: imp-null
+P1#show mpls ldp bindings | include 4.4.4.4
+  lib entry: 4.4.4.4/32, rev 22
+P1#show mpls ldp bindings | include 4.4.4.43.3.3.3             how mpls ldp bindings | include 2.2.2.2               ahow mpls ldp bindings | include 2.2.2.2show mpls ldp bindings                  how mpls ldp bindings | include 2.2.2.2       show mpls ldp bindings | include 2.2.2.2
+	remote binding: lsr: 2.2.2.2:0, label: 16
+  lib entry: 2.2.2.2/32, rev 10
+	remote binding: lsr: 2.2.2.2:0, label: imp-null
+	remote binding: lsr: 2.2.2.2:0, label: 19
+	remote binding: lsr: 2.2.2.2:0, label: 21
+	remote binding: lsr: 2.2.2.2:0, label: imp-null
+	remote binding: lsr: 2.2.2.2:0, label: 17
+	remote binding: lsr: 2.2.2.2:0, label: imp-null
+	remote binding: lsr: 2.2.2.2:0, label: 20
+	remote binding: lsr: 2.2.2.2:0, label: imp-null
+P1#show mpls ldp bindings | include 2.2.2.24.4.4.43.3.3.3how mpls ldp bindings | include 2.2.2.2 show mpls ldp bindings | include 3.3.3.34.4.4.42.2.2.2                                                     show mpls forwarding-table
+Local      Outgoing   Prefix           Bytes Label   Outgoing   Next Hop    
+Label      Label      or Tunnel Id     Switched      interface              
+16         Pop Label  2.2.2.2/32       1002          Se1/2      point2point 
+17         Pop Label  10.0.0.12/30     0             Se1/2      point2point 
+19         Pop Label  3.3.3.3/32       0             Se1/1      point2point 
+20         Pop Label  10.0.0.16/30     0             Se1/1      point2point 
+21         21         4.4.4.4/32       0             Se1/1      point2point 
+           21         4.4.4.4/32       0             Se1/2      point2point 
+P1#
+P1#show mpls forwarding-table | include 2.2.2.2
+16         Pop Label  2.2.2.2/32       1002          Se1/2      point2point 
+P1#show mpls forwarding-table | include 3.3.3.3
+19         Pop Label  3.3.3.3/32       0             Se1/1      point2point 
+P1#show mpls forwarding-table | include 4.4.4.4
+21         21         4.4.4.4/32       0             Se1/1      point2point 
+           21         4.4.4.4/32       0             Se1/2      point2point 
+P1#ping mpls ipv4 3.3.3.3/32
+Sending 5, 100-byte MPLS Echos to 3.3.3.3/32, 
+     timeout is 2 seconds, send interval is 0 msec:
+
+Codes: '!' - success, 'Q' - request not sent, '.' - timeout,
+  'L' - labeled output interface, 'B' - unlabeled output interface, 
+  'D' - DS Map mismatch, 'F' - no FEC mapping, 'f' - FEC mismatch,
+  'M' - malformed request, 'm' - unsupported tlvs, 'N' - no label entry, 
+  'P' - no rx intf label prot, 'p' - premature termination of LSP, 
+  'R' - transit router, 'I' - unknown upstream index,
+  'l' - Label switched with FEC change, 'd' - see DDMAP for return code,
+  'X' - unknown return code, 'x' - return code 0
+
+Type escape sequence to abort.
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 44/49/64 ms
+ Total Time Elapsed 304 ms
+
+P1#ping mpls ipv4 4.4.4.4/32
+Sending 5, 100-byte MPLS Echos to 4.4.4.4/32, 
+     timeout is 2 seconds, send interval is 0 msec:
+
+Codes: '!' - success, 'Q' - request not sent, '.' - timeout,
+  'L' - labeled output interface, 'B' - unlabeled output interface, 
+  'D' - DS Map mismatch, 'F' - no FEC mapping, 'f' - FEC mismatch,
+  'M' - malformed request, 'm' - unsupported tlvs, 'N' - no label entry, 
+  'P' - no rx intf label prot, 'p' - premature termination of LSP, 
+  'R' - transit router, 'I' - unknown upstream index,
+  'l' - Label switched with FEC change, 'd' - see DDMAP for return code,
+  'X' - unknown return code, 'x' - return code 0
+
+Type escape sequence to abort.
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 44/51/60 ms
+ Total Time Elapsed 312 ms
+
+P1#traceroute mpls ipv4 3.3.3.3/32
+Tracing MPLS Label Switched Path to 3.3.3.3/32, timeout is 2 seconds
+
+Codes: '!' - success, 'Q' - request not sent, '.' - timeout,
+  'L' - labeled output interface, 'B' - unlabeled output interface, 
+  'D' - DS Map mismatch, 'F' - no FEC mapping, 'f' - FEC mismatch,
+  'M' - malformed request, 'm' - unsupported tlvs, 'N' - no label entry, 
+  'P' - no rx intf label prot, 'p' - premature termination of LSP, 
+  'R' - transit router, 'I' - unknown upstream index,
+  'l' - Label switched with FEC change, 'd' - see DDMAP for return code,
+  'X' - unknown return code, 'x' - return code 0
+
+Type escape sequence to abort.
+  0 10.0.0.9 MRU 1500 [Labels: implicit-null Exp: 0]
+! 1 10.0.0.10 44 ms
+P1#traceroute mpls ipv4 4.4.4.4/32
+Tracing MPLS Label Switched Path to 4.4.4.4/32, timeout is 2 seconds
+
+Codes: '!' - success, 'Q' - request not sent, '.' - timeout,
+  'L' - labeled output interface, 'B' - unlabeled output interface, 
+  'D' - DS Map mismatch, 'F' - no FEC mapping, 'f' - FEC mismatch,
+  'M' - malformed request, 'm' - unsupported tlvs, 'N' - no label entry, 
+  'P' - no rx intf label prot, 'p' - premature termination of LSP, 
+  'R' - transit router, 'I' - unknown upstream index,
+  'l' - Label switched with FEC change, 'd' - see DDMAP for return code,
+  'X' - unknown return code, 'x' - return code 0
+
+Type escape sequence to abort.
+  0 10.0.0.9 MRU 1500 [Labels: 21 Exp: 0]
+I 1 10.0.0.10 MRU 1504 [Labels: implicit-null Exp: 0] 40 ms
+! 2 10.0.0.18 60 ms
+P1#show running-config | section router bgp
+router bgp 65100
+ bgp log-neighbor-changes
+ neighbor 3.3.3.3 remote-as 65100
+ neighbor 3.3.3.3 update-source Loopback0
+ neighbor 3.3.3.3 soft-reconfiguration inbound
+ neighbor 10.0.0.2 remote-as 65000
+ neighbor 10.0.0.2 soft-reconfiguration inbound
+P1#show ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 1.1.1.1
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    1.1.1.1 0.0.0.0 area 0
+    10.0.0.0 0.0.0.3 area 0
+    10.0.0.8 0.0.0.3 area 0
+    10.0.0.20 0.0.0.3 area 0
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    4.4.4.4              110      00:28:02
+    3.3.3.3              110      00:28:12
+    2.2.2.2              110      00:28:02
+  Distance: (default is 110)
+
+Routing Protocol is "bgp 65100"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+ --More--           IGP synchronization is disabled
+  Automatic route summarization is disabled
+  Neighbor(s):
+    Address          FiltIn FiltOut DistIn DistOut Weight RouteMap
+    3.3.3.3                                              
+    10.0.0.2                                             
+  Maximum path: 1
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    3.3.3.3              200      00:27:21
+    10.0.0.2              20      00:29:18
+  Distance: external 20 internal 200 local 200
+
+P1#show ip bgp summary
+BGP router identifier 1.1.1.1, local AS number 65100
+BGP table version is 8, main routing table version 8
+7 network entries using 1008 bytes of memory
+7 path entries using 560 bytes of memory
+3/3 BGP path/bestpath attribute entries using 408 bytes of memory
+2 BGP AS-PATH entries using 48 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 2024 total bytes of memory
+BGP activity 7/0 prefixes, 7/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+3.3.3.3         4        65100      33      36        8    0    0 00:28:34        3
+10.0.0.2        4        65000      44      38        8    0    0 00:30:31        4
+P1#show ip bgp
+BGP table version is 8, local router ID is 1.1.1.1
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *>i 0.0.0.0          3.3.3.3                  0    100      0 65110 i
+ *>  8.8.8.0/24       10.0.0.2                 0             0 65000 ?
+ *>  9.9.9.0/24       10.0.0.2                 0             0 65000 ?
+ r>  10.0.0.0/30      10.0.0.2                 0             0 65000 ?
+ *>  10.0.0.4/30      10.0.0.2                 0             0 65000 ?
+ *>i 172.16.0.0/24    3.3.3.3                  0    100      0 65110 ?
+ *>i 200.0.0.0/30     3.3.3.3                  0    100      0 65110 ?
+P1#show ip bgp neighbors
+BGP neighbor is 3.3.3.3,  remote AS 65100, internal link
+  BGP version 4, remote router ID 3.3.3.3
+  BGP state = Established, up for 00:28:36
+  Last read 00:00:46, last write 00:00:48, hold time is 180, keepalive interval is 60 seconds
+  Neighbor sessions:
+    1 active, is not multisession capable (disabled)
+  Neighbor capabilities:
+    Route refresh: advertised and received(new)
+    Four-octets ASN Capability: advertised and received
+    Address family IPv4 Unicast: advertised and received
+    Enhanced Refresh Capability: advertised and received
+    Multisession Capability: 
+    Stateful switchover support enabled: NO for session 1
+  Message statistics:
+    InQ depth is 0
+    OutQ depth is 0
+    
+                         Sent       Rcvd
+    Opens:                  1          1
+    Notifications:          0          0
+    Updates:                2          3
+    Keepalives:            33         29
+ --More--             Route Refresh:          0          0
+    Total:                 36         33
+  Default minimum time between advertisement runs is 0 seconds
+
+ For address family: IPv4 Unicast
+  Session: 3.3.3.3
+  BGP table version 8, neighbor version 8/0
+  Output queue size : 0
+  Index 2, Advertise bit 1
+  2 update-group member
+  Inbound soft reconfiguration allowed
+  Slow-peer detection is disabled
+  Slow-peer split-update-group dynamic is disabled
+                                 Sent       Rcvd
+  Prefix activity:               ----       ----
+    Prefixes Current:               4          3 (Consumes 240 bytes)
+    Prefixes Total:                 4          3
+    Implicit Withdraw:              0          0
+    Explicit Withdraw:              0          0
+    Used as bestpath:             n/a          3
+    Used as multipath:            n/a          0
+
+                                   Outbound    Inbound
+ --More--           Local Policy Denied Prefixes:    --------    -------
+    Bestpath from this peer:              3        n/a
+    Total:                                3          0
+  Number of NLRIs in the update sent: max 4, min 0
+  Last detected as dynamic slow peer: never
+  Dynamic slow peer recovered: never
+  Refresh Epoch: 1
+  Last Sent Refresh Start-of-rib: never
+  Last Sent Refresh End-of-rib: never
+  Last Received Refresh Start-of-rib: never
+  Last Received Refresh End-of-rib: never
+				       Sent	  Rcvd
+	Refresh activity:	       ----	  ----
+	  Refresh Start-of-RIB          0          0
+	  Refresh End-of-RIB            0          0
+
+  Address tracking is enabled, the RIB does have a route to 3.3.3.3
+  Connections established 1; dropped 0
+  Last reset never
+  Transport(tcp) path-mtu-discovery is enabled
+  Graceful-Restart is disabled
+Connection state is ESTAB, I/O status: 1, unread input bytes: 0        
+Connection is ECN Disabled
+ --More--         Mininum incoming TTL 0, Outgoing TTL 255
+Local host: 1.1.1.1, Local port: 179
+Foreign host: 3.3.3.3, Foreign port: 60118
+Connection tableid (VRF): 0
+
+Enqueued packets for retransmit: 0, input: 0  mis-ordered: 0 (0 bytes)
+
+Event Timers (current time is 0x1C6648):
+Timer          Starts    Wakeups            Next
+Retrans            35          1             0x0
+TimeWait            0          0             0x0
+AckHold            30         27             0x0
+SendWnd             0          0             0x0
+KeepAlive           0          0             0x0
+GiveUp              0          0             0x0
+PmtuAger            0          0             0x0
+DeadWait            0          0             0x0
+Linger              0          0             0x0
+
+iss: 2850151267  snduna: 2850152050  sndnxt: 2850152050     sndwnd:  15602
+irs: 2670568444  rcvnxt: 2670569200  rcvwnd:      15629  delrcvwnd:    755
+
+SRTT: 310 ms, RTTO: 394 ms, RTV: 84 ms, KRTT: 0 ms
+ --More--         minRTT: 44 ms, maxRTT: 376 ms, ACK hold: 200 ms
+Status Flags: passive open, gen tcbs
+Option Flags: nagle, path mtu capable
+
+Datagrams (max data segment is 1436 bytes):
+Rcvd: 68 (out of order: 0), with data: 32, total data bytes: 755
+Sent: 64 (retransmit: 1 fastretransmit: 0),with data: 35, total data bytes: 782
+
+
+BGP neighbor is 10.0.0.2,  remote AS 65000, external link
+  BGP version 4, remote router ID 10.0.0.6
+  BGP state = Established, up for 00:30:33
+  Last read 00:00:20, last write 00:00:09, hold time is 180, keepalive interval is 60 seconds
+  Neighbor sessions:
+    1 active, is not multisession capable (disabled)
+  Neighbor capabilities:
+    Route refresh: advertised and received(new)
+    Four-octets ASN Capability: advertised and received
+    Address family IPv4 Unicast: advertised and received
+    Enhanced Refresh Capability: advertised and received
+    Multisession Capability: 
+    Stateful switchover support enabled: NO for session 1
+ --More--           Message statistics:
+    InQ depth is 0
+    OutQ depth is 0
+    
+                         Sent       Rcvd
+    Opens:                  1          1
+    Notifications:          0          0
+    Updates:                3          5
+    Keepalives:            34         38
+    Route Refresh:          0          0
+    Total:                 38         44
+  Default minimum time between advertisement runs is 30 seconds
+
+ For address family: IPv4 Unicast
+  Session: 10.0.0.2
+  BGP table version 8, neighbor version 8/0
+  Output queue size : 0
+  Index 1, Advertise bit 0
+  1 update-group member
+  Inbound soft reconfiguration allowed
+  Slow-peer detection is disabled
+  Slow-peer split-update-group dynamic is disabled
+                                 Sent       Rcvd
+ --More--           Prefix activity:               ----       ----
+    Prefixes Current:               3          4 (Consumes 320 bytes)
+    Prefixes Total:                 3          4
+    Implicit Withdraw:              0          0
+    Explicit Withdraw:              0          0
+    Used as bestpath:             n/a          4
+    Used as multipath:            n/a          0
+
+                                   Outbound    Inbound
+  Local Policy Denied Prefixes:    --------    -------
+    AS_PATH loop:                       n/a          5
+    Bestpath from this peer:              4        n/a
+    Total:                                4          5
+  Number of NLRIs in the update sent: max 2, min 0
+  Last detected as dynamic slow peer: never
+  Dynamic slow peer recovered: never
+  Refresh Epoch: 1
+  Last Sent Refresh Start-of-rib: never
+  Last Sent Refresh End-of-rib: never
+  Last Received Refresh Start-of-rib: never
+  Last Received Refresh End-of-rib: never
+				       Sent	  Rcvd
+	Refresh activity:	       ----	  ----
+ --More--         	  Refresh Start-of-RIB          0          0
+	  Refresh End-of-RIB            0          0
+
+  Address tracking is enabled, the RIB does have a route to 10.0.0.2
+  Connections established 1; dropped 0
+  Last reset never
+  Transport(tcp) path-mtu-discovery is enabled
+  Graceful-Restart is disabled
+Connection state is ESTAB, I/O status: 1, unread input bytes: 0        
+Connection is ECN Disabled
+Mininum incoming TTL 0, Outgoing TTL 1
+Local host: 10.0.0.1, Local port: 179
+Foreign host: 10.0.0.2, Foreign port: 61177
+Connection tableid (VRF): 0
+
+Enqueued packets for retransmit: 0, input: 0  mis-ordered: 0 (0 bytes)
+
+Event Timers (current time is 0x1C6694):
+Timer          Starts    Wakeups            Next
+Retrans            38          1             0x0
+TimeWait            0          0             0x0
+AckHold            41         38             0x0
+SendWnd             0          0             0x0
+ --More--         KeepAlive           0          0             0x0
+GiveUp              0          0             0x0
+PmtuAger            0          0             0x0
+DeadWait            0          0             0x0
+Linger              0          0             0x0
+
+iss:  204841115  snduna:  204841946  sndnxt:  204841946     sndwnd:  15554
+irs: 1067358980  rcvnxt: 1067360023  rcvwnd:      15342  delrcvwnd:   1042
+
+SRTT: 298 ms, RTTO: 319 ms, RTV: 21 ms, KRTT: 638 ms
+minRTT: 44 ms, maxRTT: 300 ms, ACK hold: 200 ms
+Status Flags: passive open, gen tcbs
+Option Flags: nagle, path mtu capable
+
+Datagrams (max data segment is 1460 bytes):
+Rcvd: 81 (out of order: 0), with data: 42, total data bytes: 1042
+Sent: 79 (retransmit: 1 fastretransmit: 0),with data: 37, total data bytes: 830
+
+
+P1# show ip bgp neighbors 10.0.0.2
+BGP neighbor is 10.0.0.2,  remote AS 65000, external link
+  BGP version 4, remote router ID 10.0.0.6
+  BGP state = Established, up for 00:31:05
+  Last read 00:00:51, last write 00:00:41, hold time is 180, keepalive interval is 60 seconds
+  Neighbor sessions:
+    1 active, is not multisession capable (disabled)
+  Neighbor capabilities:
+    Route refresh: advertised and received(new)
+    Four-octets ASN Capability: advertised and received
+    Address family IPv4 Unicast: advertised and received
+    Enhanced Refresh Capability: advertised and received
+    Multisession Capability: 
+    Stateful switchover support enabled: NO for session 1
+  Message statistics:
+    InQ depth is 0
+    OutQ depth is 0
+    
+                         Sent       Rcvd
+    Opens:                  1          1
+    Notifications:          0          0
+    Updates:                3          5
+    Keepalives:            34         38
+ --More--             Route Refresh:          0          0
+ --More--         
+P1#how ip bgp neighbors 10.0.0.2 | include BGP state
+    ^
+% Invalid input detected at '^' marker.
+
+P1#show ip bgp neighbors 10.0.0.2 | include remote AS
+BGP neighbor is 10.0.0.2,  remote AS 65000, external link
+P1#show ip bgp neighbors 10.0.0.2 | include Prefix
+  Prefix activity:               ----       ----
+    Prefixes Current:               3          4 (Consumes 320 bytes)
+    Prefixes Total:                 3          4
+  Local Policy Denied Prefixes:    --------    -------
+P1#show ip bgp neighbors 10.0.0.2 | include Prefixremote AShow ip bgp neighbors 10.0.0.2 | include BGP state show ip bgp neighbors 10.0.0.2 | include remote AShow ip bgp neighbors 10.0.0.2 | include BGP state  show ip bgp neighbors 10.0.0.2                  show ip bgp neighbors           show ip bgp neighbors 10.0.0.2how ip bgp neighbors 10.0.0.2 | include BGP state         show ip bgp neighbors 10.0.0.2 | include BGP state
+  BGP state = Established, up for 00:31:24
+P1#show ip bgp neighbors 10.0.0.2 | include BGP statePrefix                                                               show ip route bgp
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is 3.3.3.3 to network 0.0.0.0
+
+B*    0.0.0.0/0 [200/0] via 3.3.3.3, 00:28:43
+      8.0.0.0/24 is subnetted, 1 subnets
+B        8.8.8.0 [20/0] via 10.0.0.2, 00:30:40
+      9.0.0.0/24 is subnetted, 1 subnets
+B        9.9.9.0 [20/0] via 10.0.0.2, 00:30:40
+      10.0.0.0/8 is variably subnetted, 9 subnets, 2 masks
+B        10.0.0.4/30 [20/0] via 10.0.0.2, 00:30:40
+      172.16.0.0/24 is subnetted, 1 subnets
+B        172.16.0.0 [200/0] via 3.3.3.3, 00:28:43
+      200.0.0.0/30 is subnetted, 1 subnets
+B        200.0.0.0 [200/0] via 3.3.3.3, 00:28:43
+P1#show ip bgp
+BGP table version is 8, local router ID is 1.1.1.1
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *>i 0.0.0.0          3.3.3.3                  0    100      0 65110 i
+ *>  8.8.8.0/24       10.0.0.2                 0             0 65000 ?
+ *>  9.9.9.0/24       10.0.0.2                 0             0 65000 ?
+ r>  10.0.0.0/30      10.0.0.2                 0             0 65000 ?
+ *>  10.0.0.4/30      10.0.0.2                 0             0 65000 ?
+ *>i 172.16.0.0/24    3.3.3.3                  0    100      0 65110 ?
+ *>i 200.0.0.0/30     3.3.3.3                  0    100      0 65110 ?
+P1#
+P1#show ip bgp neighbors <INTERNET-IP> routes
+                         ^
+% Invalid input detected at '^' marker.
+
+P1#show ip bgp neighbors <INTERNET-IP> advertised-routes                                                             show ip bgp <PREFIX>
+               ^
+% Invalid input detected at '^' marker.
+
+P1#
+P1#show ip bgp 0.0.0.0
+BGP routing table entry for 0.0.0.0/0, version 6
+Paths: (1 available, best #1, table default)
+  Advertised to update-groups:
+     1         
+  Refresh Epoch 1
+  65110, (received & used)
+    3.3.3.3 (metric 65) from 3.3.3.3 (3.3.3.3)
+      Origin IGP, metric 0, localpref 100, valid, internal, best
+      rx pathid: 0, tx pathid: 0x0
+P1#show vrf
+P1#show ip vrf
+P1#show cdp neighbors
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone, 
+                  D - Remote, C - CVTA, M - Two-port Mac Relay 
+
+Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+INTERNET         Ser 1/0           148               R    7206VXR   Ser 1/0
+PE1              Ser 1/1           144               R    7206VXR   Ser 1/1
+P2               Ser 1/2           121               R    7206VXR   Ser 1/2
+P1#show cdp neighbors detail
+-------------------------
+Device ID: INTERNET
+Entry address(es): 
+  IP address: 10.0.0.2
+Platform: Cisco 7206VXR,  Capabilities: Router 
+Interface: Serial1/0,  Port ID (outgoing port): Serial1/0
+Holdtime : 148 sec
+
+Version :
+Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 15.2(4)S6, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Fri 08-Aug-14 04:05 by prod_rel_team
+
+advertisement version: 2
+Management address(es): 
+  IP address: 10.0.0.2
+
+-------------------------
+Device ID: PE1
+Entry address(es): 
+  IP address: 10.0.0.10
+ --More--         Platform: Cisco 7206VXR,  Capabilities: Router 
+ --More--         
+P1#how lldp neighbors
+    ^
+% Invalid input detected at '^' marker.
+
+P1#show lldp neighbors detail
+          ^
+% Invalid input detected at '^' marker.
+
+P1#show logging
+Syslog logging: enabled (0 messages dropped, 0 messages rate-limited, 0 flushes, 0 overruns, xml disabled, filtering disabled)
+
+No Active Message Discriminator.
+
+
+
+No Inactive Message Discriminator.
+
+
+    Console logging: level debugging, 26 messages logged, xml disabled,
+                     filtering disabled
+    Monitor logging: level debugging, 0 messages logged, xml disabled,
+                     filtering disabled
+    Buffer logging:  level debugging, 26 messages logged, xml disabled,
+                    filtering disabled
+    Exception Logging: size (8192 bytes)
+    Count and timestamp logging messages: disabled
+    Persistent logging: disabled
+
+No active filter modules.
+
+ --More--         
+P1#how logging | include OSPF
+    ^
+% Invalid input detected at '^' marker.
+
+P1#show logging | include LDP
+*Sep  4 14:06:50.931: %LDP-5-NBRCHG: LDP Neighbor 2.2.2.2:0 (1) is UP
+*Sep  4 14:08:37.319: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (2) is UP
+P1#show logging | include BGP
+*Sep  4 14:06:42.567: %BGP-5-ADJCHANGE: neighbor 10.0.0.2 Up 
+*Sep  4 14:08:39.679: %BGP-5-ADJCHANGE: neighbor 3.3.3.3 Up 
+P1#show logging | include BGPLDPhow logging | include OSPF           show logging | include OSPF
+*Sep  4 14:06:37.059: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on Serial1/2 from LOADING to FULL, Loading Done
+*Sep  4 14:08:31.575: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on Serial1/1 from LOADING to FULL, Loading Done
+P1#show processes cpu
+CPU utilization for five seconds: 1%/0%; one minute: 7%; five minutes: 10%
+ --More--         
+P1#how processes cpu history
+    ^
+% Invalid input detected at '^' marker.
+
+P1#show memory
+                Head    Total(b)     Used(b)     Free(b)   Lowest(b)  Largest(b)
+ --More--         
+
+          I/O memory
+
+ Address      Bytes     Prev     Next Ref     PrevF    NextF Alloc PC  what
+0E000000 0000061056 00000000 0E00EEB0 000  659F529C 0        623AF28C  (coalesced)
+0E00EEB0 0000000272 0E000000 0E00EFF0 001  -------- -------- 62AEC46C  *Packet Data*
+0E00EFF0 0000000272 0E00EEB0 0E00F130 001  -------- -------- 62AEC46C  *Packet Data*
+0E00F130 0000000272 0E00EFF0 0E00F270 001  -------- -------- 62AEC46C  *Packet Data*
+0E00F270 0000000272 0E00F130 0E00F3B0 001  -------- -------- 62AEC46C  *Packet Data*
+0E00F3B0 0000000272 0E00F270 0E00F4F0 001  -------- -------- 62AEC46C  *Packet Data*
+0E00F4F0 0000000272 0E00F3B0 0E00F630 001  -------- -------- 62AEC46C  *Packet Data*
+0E00F630 0000000272 0E00F4F0 0E00F770 001  -------- -------- 62AEC46C  *Packet Data*
+0E00F770 0000000272 0E00F630 0E00F8B0 001  -------- -------- 62AEC46C  *Packet Data*
+ --More--         
+
+          Transient memory
+
+ Address      Bytes     Prev     Next Ref     PrevF    NextF Alloc PC  what
+7D000000 0000000304 00000000 7D000160 000  0        0        605D2B60  (coalesced)
+7D000160 0000005004 7D000000 7D00151C 001  -------- -------- 623D4590  Watcher Info
+7D00151C 0000005004 7D000160 7D0028D8 001  -------- -------- 623D4590  Watcher Info
+7D0028D8 0000000036 7D00151C 7D00292C 000  0        0        60551678  Init
+7D00292C 0000005004 7D0028D8 7D003CE8 001  -------- -------- 623D4590  Watcher Info
+7D003CE8 0000065540 7D00292C 7D013D1C 001  -------- -------- 602DD9B8  BGP (2) update
+7D013D1C 0000065540 7D003CE8 7D023D50 001  -------- -------- 602DD9B8  BGP (6) update
+7D023D50 0000065540 7D013D1C 7D033D84 001  -------- -------- 602DD9B8  BGP (4) update
+7D033D84 0016564812 7D023D50 00000000 000  0        0        623C1630  (fragment)
+P1#ow memory statistics
+   ^
+% Invalid input detected at '^' marker.
+
+P1#ow memory statistics
+   ^
+% Invalid input detected at '^' marker.
+
+P1# ow memory statisticsshow memory         how processes cpu history               show processes cpu history
+                                                                  
+                                                                  
+                                                                  
+         11111     33333222222222233333          11111            
+      111666661111111111888889999955555111118888822222222222222222
+  100                                                           
+   90                                                           
+   80                                                           
+   70                                                           
+   60                                                           
+   50                                                           
+   40                             *****                         
+   30              ********************                         
+   20    *****     ********************                         
+   10    *****     ********************     **********          
+     0....5....1....1....2....2....3....3....4....4....5....5....6
+               0    5    0    5    0    5    0    5    0    5    0
+               CPU% per second (last 60 seconds)
+
+                                                                  
+                                                                  
+                                                                  
+      3229293292991222221222122221222224                          
+ --More--               5586665265667344518318748828661019                          
+  100    * *  * **                                              
+   90    * *  * **                                              
+   80    * *  * **                                              
+   70    * *  * **                                              
+   60    * *  * **                                              
+   50    * *  * **                     *                        
+   40 *  * ** * #*                     *                        
+   30 ******* **#*    *    *  **  **   *                        
+   20 ***#*#**#*##**********************                        
+   10 ##############***#########**#*####                        
+     0....5....1....1....2....2....3....3....4....4....5....5....6
+               0    5    0    5    0    5    0    5    0    5    0
+               CPU% per minute (last 60 minutes)
+              * = maximum CPU%   # = average CPU%
+
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+  100                                                                       
+   90                                                                       
+ --More--            80                                                                       
+   70                                                                       
+   60                                                                       
+   50                                                                       
+   40                                                                       
+   30                                                                       
+   20                                                                       
+   10                                                                       
+     0....5....1....1....2....2....3....3....4....4....5....5....6....6....7..
+               0    5    0    5    0    5    0    5    0    5    0    5    0  
+                   CPU% per hour (last 72 hours)
+                  * = maximum CPU%   # = average CPU%
+
+
+P1# show processes cpu historyow memory statistics            sow memory statistics
+    ^
+% Invalid input detected at '^' marker.
+
+P1#sow memory statisticshow memory statistics
+                Head    Total(b)     Used(b)     Free(b)   Lowest(b)  Largest(b)
+Processor   65AF0E20   391179916    56822620   334357296   330985024   324071052
+      I/O    E000000    33554432     2428028    31126404    31065400    31065308
+Transient   7D000000    16777216      212076    16565140    16565140    16564808
+P1# 
